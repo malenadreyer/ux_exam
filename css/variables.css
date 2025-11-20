@@ -1,33 +1,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..600&display=swap&text=abcdefghijklkmnoprstuxyABDEFILNRSY"); /* OPEN SANS */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300..600&display=swap"); /* INTER */
 :root {
-    /* Color Palette */
-    --primary-color: ;
-    --secondary-color: ;
-    --tertiary-color: ;
-    --hover-color: ;
-    --input-bg: ;
-    --focus-color: ;
+    /* Color palette */
+    --primary-color: #503b31;
+    --secondary-color: #60463A;
+    --tertiary-color: #815d4c;
+    --hover-color: #815d4c;
+    --input-bg: #toBeFilled;
+    --focus-color: #43403e;
 
-    /* error colors */
-    --error-bg: ;
-    --error-color: ;
+    /* Error colors */
+    --error-bg: #7a2a29;
+    --error-text-color: #FFFFFF;
 
-    /* success colors */
-    --success-bg: #E0FFE0;
-    --success-color: #00B000;
+    /* Success colors */
+    --success-bg: #FFFFFF;
+    --success-text-color: #1d5825;
 
-    --light-background-color: #FFFFFF;
-    --secondary-background-color: #2B2B2B;
+    --light-background-color: #f2f0eb;
+    --dark-background-color: #2B2B2B;
 
     --dark-text-color: #2B2B2B;
-    --light-text-color: #FFFFFF;
+    --light-text-color: #f2f0eb;
 
     /* Typography */
-    --font-head: "Open Sans", sans-serif;
-    --font-main: "Inter", sans-serif;
+    --header-font: "Open Sans", sans-serif;
+    --main-font: "Inter", sans-serif;
 
-    /* Font Sizes */
+    /* Font sizes */
     --font-size-sm: clamp(0.75rem, 1vw, 0.875rem);
     --font-size-md: clamp(0.875rem, 1.2vw, 1rem);
     --font-size-lg: clamp(1.1rem, 1.3vw, 1.25rem);
@@ -35,16 +35,16 @@
     --font-size-xxl: clamp(1.75rem, 3.5vw, 2.5rem);
     --font-size-header: clamp(1.5rem, 2.5vw, 2rem);
 
-    /* Font Weight */
+    /* Font weight */
     --font-light: 300;
     --font-semibold: 400;
     --font-bold: 500;
-    --font-bolder: 600;
+    --font-bolder: 600; /* MAX */
 
-    /* Line Height */
+    /* Line height */
     --standard-line-height: 1.5rem;
-    --book-title-line-height: 1.4;
-    --a-lineheight: 1;
+    --title-line-height: 1.4;
+    --link-lineheight: 1;
 
     /* Element spacing */
     --spacing-minus-xxl: -2rem;
@@ -77,7 +77,7 @@
     --logo-size: 92px;
     --social-icon-size: 30px;
 
-    /* Scales */
+    /* Scales (for helping with responsiveness :)) */
     --scale-minus-mini: -0.0625rem;
     --scale-mini: 0.0625rem;
     --scale-sm: 1.02;
@@ -101,49 +101,49 @@
     --card-width: 15.625rem;
     --book-detail-width: 50rem;
 
-    /* opacity */
+    /* Opacity, if needed? */
     --opacity-xs: 0.1;
     --opacity-sm: 0.5;
     --opacity-md: 0.8;
 
-    /* blur */
+    /* Blur, maybe only needed for the toasts? */
     --blur-sm: 5px;
 
-    /* touch, input and checkbox*/
+    /* Touch, input and checkbox sizes */
     --touch-size: 3rem;
     --checkbox-size: 1.25rem;
     --touch-target: 0.95rem;
     --new-touch-target: 48px;
 
-    /* side_menu */
+    /* Side_menu, for when hidden */
     --right-side-menu: -15.625rem;
 
-    /* z-index */
+    /* Z-index */
     --z-index-1: 1;
     --z-index-1000: 1000;
 
-    /* flex-grow */
+    /* Flex-grow */
     --flex-grow-1: 1;
 
-    /* transitions */
+    /* Transitions, if needed? */
     --trasnition-shorter: 0.2s;
     --trasnition-short: 0.3s;
 
-    /* character width */
+    /* Character width */
     --ch-width-xs: 40ch;
     --ch-width-sm: 60ch;
     --ch-width-md: 80ch;
 
-    /* shadow pixels */
+    /* Shadow pixels? */
     --shadow-px-sm: 2px;
     --shadow-px-md: 4px;
     --shadow-px-lg: 8px;
     --shadow-px-xxl: 25px;
 
-    /* hex */
+    /* Hex colour def */
     --white-hex: 255;
 
-    /* aspec ratio */
+    /* Aspect ratios */
     --aspec-ratio-1: 1;
     --aspec-ratio-2: 2;
     --aspec-ratio-3: 3;
