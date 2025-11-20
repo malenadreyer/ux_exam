@@ -11,6 +11,7 @@ body > header {
       list-style: none;
 
       li {
+         
         margin: 0 var(--spacing-xl);
         color: var(--dark-text-color);
 
@@ -27,6 +28,7 @@ body > header {
 
         button:hover {
           color: var(--secondary-color);
+          }
         }
       }
     }
@@ -37,7 +39,7 @@ body > header {
     aspect-ratio: var(--aspec-ratio-3) / var(--aspec-ratio-1);
     object-fit: contain;
   }
-}
+
 
 #admin_mob {
   a {
@@ -227,7 +229,9 @@ body > header {
     display: flex;
     gap: var(--spacing-md);
 
-    li a {
+ 
+
+    li:nth-last-child(-n+2) a {
       text-decoration: none;
       padding: var(--spacing-md) var(--spacing-xl);
       border-radius: var(--border-radius-md);
@@ -241,6 +245,8 @@ body > header {
         color: var(--dark-text-color);
       }
     }
+
+    
 
     button {
       padding: var(--spacing-md) var(--spacing-xl);
