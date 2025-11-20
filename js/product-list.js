@@ -1,4 +1,5 @@
 import { BASE_URL } from './info.js';
+import { addToCart } from './basket.js';
 
 const products = await fetch(`${BASE_URL}`) 
     .then(response => response.json())
@@ -17,6 +18,7 @@ const fragment = document.createDocumentFragment();
 products.forEach(product => {
     
     const productCard = document.querySelector('#product-card').content.cloneNode(true);
+    
 
     const linkURL = `product.html?id=${product.id}`;
     
@@ -33,8 +35,22 @@ products.forEach(product => {
     
     productCard.querySelector('.product-price').innerText = product.price;
     productCard.querySelector('.product-category').innerText = product.category;
+
+    const addToCartBtn = document.createElement('button');
+    addToCartBtn.innerText = 'Tilføj til kurv';
+    addToCartBtn.className = 'add-to-cart-btn';
+    addToCartBtn.addEventListener('click', () => {
+        addToCart(product.id);
+    });
     
+    const priceElement = productCard.querySelector('.product-price');
+    priceElement.parentElement.append(addToCartBtn);
+
     fragment.append(productCard);
+
+    
 });
+
+
 
 document.querySelector('#product-list').append(fragment);

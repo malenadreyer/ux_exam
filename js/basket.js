@@ -50,6 +50,180 @@ const updateQuantity = (productId, quantity) => {
     renderCart();
 };
 
+// Render checkout formular
+const renderCheckoutForm = () => {
+    const checkoutContainer = document.querySelector('#checkout-form');
+    if (!checkoutContainer) return;
+    
+    const form = document.createElement('div');
+    form.className = 'checkout-form';
+    
+    // Billing address sektion
+    const billingSection = document.createElement('div');
+    billingSection.className = 'form-section';
+    
+    const billingTitle = document.createElement('h3');
+    billingTitle.innerText = 'Faktureringsadresse';
+    
+    const billingName = document.createElement('input');
+    billingName.type = 'text';
+    billingName.placeholder = 'Fulde navn';
+    billingName.className = 'form-input';
+    billingName.id = 'billing-name';
+    
+    const billingAddress = document.createElement('input');
+    billingAddress.type = 'text';
+    billingAddress.placeholder = 'Adresse';
+    billingAddress.className = 'form-input';
+    billingAddress.id = 'billing-address';
+    
+    const billingCity = document.createElement('input');
+    billingCity.type = 'text';
+    billingCity.placeholder = 'By';
+    billingCity.className = 'form-input';
+    billingCity.id = 'billing-city';
+    
+    const billingZip = document.createElement('input');
+    billingZip.type = 'text';
+    billingZip.placeholder = 'Postnummer';
+    billingZip.className = 'form-input';
+    billingZip.id = 'billing-zip';
+    
+    billingSection.append(billingTitle, billingName, billingAddress, billingCity, billingZip);
+    
+    // Delivery address sektion
+    const deliverySection = document.createElement('div');
+    deliverySection.className = 'form-section';
+    
+    const deliveryTitle = document.createElement('h3');
+    deliveryTitle.innerText = 'Leveringsadresse';
+    
+    const sameAsBilling = document.createElement('div');
+    sameAsBilling.className = 'checkbox-wrapper';
+    
+    const sameCheckbox = document.createElement('input');
+    sameCheckbox.type = 'checkbox';
+    sameCheckbox.id = 'same-as-billing';
+    
+    const sameLabel = document.createElement('label');
+    sameLabel.htmlFor = 'same-as-billing';
+    sameLabel.innerText = 'Samme som faktureringsadresse';
+    
+    sameAsBilling.append(sameCheckbox, sameLabel);
+    
+    const deliveryName = document.createElement('input');
+    deliveryName.type = 'text';
+    deliveryName.placeholder = 'Fulde navn';
+    deliveryName.className = 'form-input';
+    deliveryName.id = 'delivery-name';
+    
+    const deliveryAddress = document.createElement('input');
+    deliveryAddress.type = 'text';
+    deliveryAddress.placeholder = 'Adresse';
+    deliveryAddress.className = 'form-input';
+    deliveryAddress.id = 'delivery-address';
+    
+    const deliveryCity = document.createElement('input');
+    deliveryCity.type = 'text';
+    deliveryCity.placeholder = 'By';
+    deliveryCity.className = 'form-input';
+    deliveryCity.id = 'delivery-city';
+    
+    const deliveryZip = document.createElement('input');
+    deliveryZip.type = 'text';
+    deliveryZip.placeholder = 'Postnummer';
+    deliveryZip.className = 'form-input';
+    deliveryZip.id = 'delivery-zip';
+    
+    deliverySection.append(deliveryTitle, sameAsBilling, deliveryName, deliveryAddress, deliveryCity, deliveryZip);
+    
+    // Credit card sektion
+    const paymentSection = document.createElement('div');
+    paymentSection.className = 'form-section';
+    
+    const paymentTitle = document.createElement('h3');
+    paymentTitle.innerText = 'Betalingsoplysninger';
+    
+    const cardNumber = document.createElement('input');
+    cardNumber.type = 'text';
+    cardNumber.placeholder = 'Kortnummer';
+    cardNumber.className = 'form-input';
+    cardNumber.id = 'card-number';
+    cardNumber.maxLength = 19;
+    
+    const cardRow = document.createElement('div');
+    cardRow.className = 'card-row';
+    
+    const cardExpiry = document.createElement('input');
+    cardExpiry.type = 'text';
+    cardExpiry.placeholder = 'MM/ÅÅ';
+    cardExpiry.className = 'form-input';
+    cardExpiry.id = 'card-expiry';
+    cardExpiry.maxLength = 5;
+    
+    const cardCvv = document.createElement('input');
+    cardCvv.type = 'text';
+    cardCvv.placeholder = 'CVV';
+    cardCvv.className = 'form-input';
+    cardCvv.id = 'card-cvv';
+    cardCvv.maxLength = 3;
+    
+    cardRow.append(cardExpiry, cardCvv);
+    paymentSection.append(paymentTitle, cardNumber, cardRow);
+    
+    // Submit knap
+    const submitBtn = document.createElement('button');
+    submitBtn.innerText = 'Bekræft ordre';
+    submitBtn.className = 'submit-btn';
+    submitBtn.addEventListener('click', handleSubmit);
+    
+    // Confirmation message
+    const confirmMsg = document.createElement('div');
+    confirmMsg.id = 'confirm-message';
+    confirmMsg.className = 'confirm-message';
+    
+    form.append(billingSection, deliverySection, paymentSection, submitBtn, confirmMsg);
+    checkoutContainer.append(form);
+    
+    // Event listener for "same as billing" checkbox
+    sameCheckbox.addEventListener('change', () => {
+        if (sameCheckbox.checked) {
+            deliveryName.value = billingName.value;
+            deliveryAddress.value = billingAddress.value;
+            deliveryCity.value = billingCity.value;
+            deliveryZip.value = billingZip.value;
+        }
+    });
+};
+
+// Håndter formular submit
+const handleSubmit = () => {
+    const billingName = document.querySelector('#billing-name').value;
+    const billingAddress = document.querySelector('#billing-address').value;
+    const billingCity = document.querySelector('#billing-city').value;
+    const billingZip = document.querySelector('#billing-zip').value;
+    const cardNumber = document.querySelector('#card-number').value;
+    const cardExpiry = document.querySelector('#card-expiry').value;
+    const cardCvv = document.querySelector('#card-cvv').value;
+    
+    const confirmMsg = document.querySelector('#confirm-message');
+    
+    if (!billingName || !billingAddress || !billingCity || !billingZip || !cardNumber || !cardExpiry || !cardCvv) {
+        confirmMsg.innerText = 'Udfyld venligst alle felter';
+        confirmMsg.className = 'confirm-message error';
+        return;
+    }
+    
+    // Clear cart
+    saveCart([]);
+    
+    confirmMsg.innerText = 'Tak for din ordre! Du vil modtage en bekræftelse på email.';
+    confirmMsg.className = 'confirm-message success';
+    
+    // Re-render cart to show empty state
+    renderCart();
+};
+
 // Render kurven
 const renderCart = async () => {
     const cart = getCart();
@@ -61,7 +235,7 @@ const renderCart = async () => {
     cartContainer.innerHTML = '';
     
     if (cart.length === 0) {
-        cartContainer.innerHTML = '<p>Din kurv er tom</p>';
+        cartContainer.innerHTML = '<p class="empty-cart">Din kurv er tom</p>';
         if (totalElement) totalElement.innerText = '0 kr';
         return;
     }
@@ -97,6 +271,7 @@ const renderCart = async () => {
         title.innerText = product.title;
         
         const price = document.createElement('p');
+        price.className = 'item-price';
         price.innerText = `${product.price} kr`;
         
         const quantityWrapper = document.createElement('div');
@@ -104,13 +279,16 @@ const renderCart = async () => {
         
         const minusBtn = document.createElement('button');
         minusBtn.innerText = '-';
+        minusBtn.className = 'quantity-btn';
         minusBtn.addEventListener('click', () => updateQuantity(product.id, cartItem.quantity - 1));
         
         const quantitySpan = document.createElement('span');
+        quantitySpan.className = 'quantity-number';
         quantitySpan.innerText = cartItem.quantity;
         
         const plusBtn = document.createElement('button');
         plusBtn.innerText = '+';
+        plusBtn.className = 'quantity-btn';
         plusBtn.addEventListener('click', () => updateQuantity(product.id, cartItem.quantity + 1));
         
         const removeBtn = document.createElement('button');
@@ -131,7 +309,8 @@ const renderCart = async () => {
     }
 };
 
-// Kør renderCart når siden loader (kun på basket.html)
+// Kør når siden loader
 if (document.querySelector('#cart-items')) {
     renderCart();
+    renderCheckoutForm();
 }
