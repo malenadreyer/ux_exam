@@ -1,0 +1,44 @@
+/* @import 'styles.css'; */
+
+:root {
+    --imgMaxWidth: 320px;
+}
+
+#product-info {
+    header, .product-attribute, #product-description {
+        margin-bottom: 1rem;
+    }
+
+    img {
+        width: 100%;
+        border-radius: 1rem;
+    }
+
+    div:has(> .product-attribute) {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+
+
+    @media (min-width: 600px) {
+        display: grid;
+        grid-template-columns: var(--imgMaxWidth) 1fr;
+        grid-template-areas: 
+            "header header"
+            "picture ingredients"
+            "description description";
+        column-gap: 2rem;
+
+        header { grid-area: header; }
+        div:has(img) { grid-area: picture; }
+        #product-ingredients { grid-area: ingredients; }
+        #product-description { grid-area: description; }
+
+        img {
+            max-width: var(--imgMaxWidth);
+        }
+    }
+}
