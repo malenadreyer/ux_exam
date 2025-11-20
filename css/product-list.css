@@ -1,0 +1,30 @@
+
+
+:root {
+    --thumbnailDimension: 200px;
+}
+
+#product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--thumbnailDimension), 1fr));
+    grid-auto-rows: auto;
+    gap: 1rem;
+
+    header {
+        grid-column: 1 / -1;
+        text-align: center;
+    }
+
+    article {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 0.5rem;
+        align-items: center;
+        
+        img {
+            width: var(--thumbnailDimension);
+            height: var(--thumbnailDimension);
+            border-radius: 1rem;
+        }        
+    }
+}
