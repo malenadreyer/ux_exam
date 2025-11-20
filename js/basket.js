@@ -1,17 +1,17 @@
 import { BASE_URL } from './info.js';
 
-// Hent kurv fra localStorage
+// Vi starter først med hente kurven localstorage, men uden login, skal vi nok kigge på.
 const getCart = () => {
     const cart = localStorage.getItem('cart');
     return cart ? JSON.parse(cart) : [];
 };
 
-// Gem kurv til localStorage
+// Den gemmer her i localstorage
 const saveCart = (cart) => {
     localStorage.setItem('cart', JSON.stringify(cart));
 };
 
-// Tilføj produkt til kurv
+// Her tilfjer den et item til kurven, som vi bruger i product-list også, skal også in i single view siden. 
 export const addToCart = (productId) => {
     const cart = getCart();
     const existingItem = cart.find(item => item.id === productId);
@@ -25,7 +25,7 @@ export const addToCart = (productId) => {
     saveCart(cart);
 };
 
-// Fjern produkt fra kurv
+// En funktion til at fjerne produkter fra kurven 
 const removeFromCart = (productId) => {
     let cart = getCart();
     cart = cart.filter(item => item.id !== productId);
@@ -33,7 +33,7 @@ const removeFromCart = (productId) => {
     renderCart();
 };
 
-// Opdater antal
+// her opdatere vi antalet
 const updateQuantity = (productId, quantity) => {
     const cart = getCart();
     const item = cart.find(item => item.id === productId);
@@ -50,7 +50,7 @@ const updateQuantity = (productId, quantity) => {
     renderCart();
 };
 
-// Render checkout formular
+/////////////////// Her er en check out form ////////////////////////
 const renderCheckoutForm = () => {
     const checkoutContainer = document.querySelector('#checkout-form');
     if (!checkoutContainer) return;
@@ -63,40 +63,40 @@ const renderCheckoutForm = () => {
     billingSection.className = 'form-section';
     
     const billingTitle = document.createElement('h3');
-    billingTitle.innerText = 'Faktureringsadresse';
+    billingTitle.innerText = 'Billing adress';
     
     const billingName = document.createElement('input');
     billingName.type = 'text';
-    billingName.placeholder = 'Fulde navn';
+    billingName.placeholder = 'Full name';
     billingName.className = 'form-input';
     billingName.id = 'billing-name';
     
     const billingAddress = document.createElement('input');
     billingAddress.type = 'text';
-    billingAddress.placeholder = 'Adresse';
+    billingAddress.placeholder = 'Adress';
     billingAddress.className = 'form-input';
     billingAddress.id = 'billing-address';
     
     const billingCity = document.createElement('input');
     billingCity.type = 'text';
-    billingCity.placeholder = 'By';
+    billingCity.placeholder = 'Town';
     billingCity.className = 'form-input';
     billingCity.id = 'billing-city';
     
     const billingZip = document.createElement('input');
     billingZip.type = 'text';
-    billingZip.placeholder = 'Postnummer';
+    billingZip.placeholder = 'Zip';
     billingZip.className = 'form-input';
     billingZip.id = 'billing-zip';
     
     billingSection.append(billingTitle, billingName, billingAddress, billingCity, billingZip);
     
-    // Delivery address sektion
+    /////////////////// Deilivery adress secition /////////////////////////////////////
     const deliverySection = document.createElement('div');
     deliverySection.className = 'form-section';
     
     const deliveryTitle = document.createElement('h3');
-    deliveryTitle.innerText = 'Leveringsadresse';
+    deliveryTitle.innerText = 'Shipping adress';
     
     const sameAsBilling = document.createElement('div');
     sameAsBilling.className = 'checkbox-wrapper';
@@ -107,46 +107,46 @@ const renderCheckoutForm = () => {
     
     const sameLabel = document.createElement('label');
     sameLabel.htmlFor = 'same-as-billing';
-    sameLabel.innerText = 'Samme som faktureringsadresse';
+    sameLabel.innerText = 'Same as billing adress';
     
     sameAsBilling.append(sameCheckbox, sameLabel);
     
     const deliveryName = document.createElement('input');
     deliveryName.type = 'text';
-    deliveryName.placeholder = 'Fulde navn';
+    deliveryName.placeholder = 'Full name';
     deliveryName.className = 'form-input';
     deliveryName.id = 'delivery-name';
     
     const deliveryAddress = document.createElement('input');
     deliveryAddress.type = 'text';
-    deliveryAddress.placeholder = 'Adresse';
+    deliveryAddress.placeholder = 'Adress';
     deliveryAddress.className = 'form-input';
     deliveryAddress.id = 'delivery-address';
     
     const deliveryCity = document.createElement('input');
     deliveryCity.type = 'text';
-    deliveryCity.placeholder = 'By';
+    deliveryCity.placeholder = 'Town';
     deliveryCity.className = 'form-input';
     deliveryCity.id = 'delivery-city';
     
     const deliveryZip = document.createElement('input');
     deliveryZip.type = 'text';
-    deliveryZip.placeholder = 'Postnummer';
+    deliveryZip.placeholder = 'Zip';
     deliveryZip.className = 'form-input';
     deliveryZip.id = 'delivery-zip';
     
     deliverySection.append(deliveryTitle, sameAsBilling, deliveryName, deliveryAddress, deliveryCity, deliveryZip);
     
-    // Credit card sektion
+    //////////////////// Credit card section //////////////////////
     const paymentSection = document.createElement('div');
     paymentSection.className = 'form-section';
     
     const paymentTitle = document.createElement('h3');
-    paymentTitle.innerText = 'Betalingsoplysninger';
+    paymentTitle.innerText = 'Payment information';
     
     const cardNumber = document.createElement('input');
     cardNumber.type = 'text';
-    cardNumber.placeholder = 'Kortnummer';
+    cardNumber.placeholder = 'Card-number';
     cardNumber.className = 'form-input';
     cardNumber.id = 'card-number';
     cardNumber.maxLength = 19;
@@ -156,7 +156,7 @@ const renderCheckoutForm = () => {
     
     const cardExpiry = document.createElement('input');
     cardExpiry.type = 'text';
-    cardExpiry.placeholder = 'MM/ÅÅ';
+    cardExpiry.placeholder = 'MM/YY';
     cardExpiry.className = 'form-input';
     cardExpiry.id = 'card-expiry';
     cardExpiry.maxLength = 5;
@@ -173,7 +173,7 @@ const renderCheckoutForm = () => {
     
     // Submit knap
     const submitBtn = document.createElement('button');
-    submitBtn.innerText = 'Bekræft ordre';
+    submitBtn.innerText = 'Confirm order';
     submitBtn.className = 'submit-btn';
     submitBtn.addEventListener('click', handleSubmit);
     
