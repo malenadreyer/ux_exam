@@ -27,6 +27,7 @@
     /* Typography */
     --header-font: "Open Sans", sans-serif;
     --main-font: "Inter", sans-serif;
+    --clickable-element-font: system-ui, sans-serif;
 
     /* Font sizes */
     --font-size-sm: clamp(0.75rem, 1vw, 0.875rem);
