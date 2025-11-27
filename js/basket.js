@@ -220,7 +220,7 @@ const handleSubmit = () => {
     
     saveCart([]);
     
-    confirmMsg.innerText = 'Than for you order';
+    confirmMsg.innerText = 'Thank you for you order';
     confirmMsg.className = 'confirm-message success';
     
     
@@ -238,7 +238,7 @@ const renderCart = async () => {
     cartContainer.innerHTML = '';
     
     if (cart.length === 0) {
-        cartContainer.innerHTML = '<p class="empty-cart">Din kurv er tom</p>';
+        cartContainer.innerHTML = '<p class="empty-cart">Your basket is empty</p>';
         if (totalElement) totalElement.innerText = '0 kr';
         return;
     }
