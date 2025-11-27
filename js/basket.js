@@ -17,36 +17,37 @@ const saveCart = (cart) => {
 
 // TODO: Hæng sammen med product siden nr jeg er kommet ind
 // Her tilfjer den et item til kurven, som vi bruger i product siden også, skal også in i single view siden. 
-export const addToCart = (productId) => {
+export const addToCart = (productInfo) => {
     const cart = getCart();
-    const existingItem = cart.find(item => item.id === productId);
+    const existingItem = cart.find(item => item.id === productInfo);
     
     if (existingItem) {
         existingItem.quantity += 1;
     } else {
-        cart.push({ id: productId, quantity: 1 });
+        cart.push({ id: productInfo, quantity: 1 });
     }
     
     saveCart(cart);
+    
 };
 
 // En funktion til at fjerne produkter fra kurven 
-const removeFromCart = (productId) => {
+const removeFromCart = (productInfo) => {
     let cart = getCart();
-    cart = cart.filter(item => item.id !== productId);
+    cart = cart.filter(item => item.id != productInfo);
     saveCart(cart);
     renderCart();
 };
 
 // her opdatere vi antalet
-const updateQuantity = (productId, quantity) => {
+const updateQuantity = (productInfo, quantity) => {
     const cart = getCart();
-    const item = cart.find(item => item.id === productId);
+    const item = cart.find(item => item.id == productInfo);
     
     if (item) {
         item.quantity = quantity;
         if (item.quantity <= 0) {
-            removeFromCart(productId);
+            removeFromCart(productInfo);
             return;
         }
     }
@@ -229,6 +230,8 @@ const handleSubmit = () => {
 
 const renderCart = async () => {
     const cart = getCart();
+    console.log('Cart items:', cart); 
+
     const cartContainer = document.querySelector('#cart-items');
     const totalElement = document.querySelector('#cart-total');
     
@@ -253,7 +256,7 @@ const renderCart = async () => {
     let total = 0;
     
     cart.forEach(cartItem => {
-        const product = products.find(p => p.id === cartItem.id);
+        const product = products.find(p => p.id == cartItem.id);
         if (!product) return;
         
         const itemTotal = product.price * cartItem.quantity;
@@ -297,7 +300,8 @@ const renderCart = async () => {
         removeBtn.innerText = 'Remove';
         removeBtn.className = 'remove-btn';
         removeBtn.addEventListener('click', () => removeFromCart(product.id));
-        
+        console.log(removeFromCart)
+
         quantityWrapper.append(minusBtn, quantitySpan, plusBtn);
         info.append(title, price, quantityWrapper, removeBtn);
         cartItemElement.append(img, info);
