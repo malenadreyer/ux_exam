@@ -1,47 +1,69 @@
 @import "styles.css";
 
 :root {
-    --imgMaxWidth: 320px;
+  --imgMaxWidth: 320px;
 }
 
+main {
+  margin: 0 var(--spacing-xl);
+}
+@media (min-width: 600px) {
+  main {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--spacing-xxl);
+  }
+}
 #product-info {
-    header, .product-attribute, #product-description {
-        margin-bottom: 1rem;
+  header,
+  .product-attribute,
+  #product-description,
+  #cta,
+  img {
+    margin-bottom: 1rem;
+  }
+
+  img {
+    width: 100%;
+    border-radius: 1rem;
+  }
+
+  button {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 1rem;
+    border-radius: 1rem;
+    border: none;
+  }
+  button:hover {
+    background-color: var(--hover-color);
+    cursor: pointer;
+  }
+
+  @media (min-width: 600px) {
+    display: grid;
+    grid-template-columns: var(--imgMaxWidth) 1fr;
+    grid-template-areas:
+      "picture header"
+      "picture ingredients"
+      "picture description";
+    column-gap: 2rem;
+
+    header {
+      grid-area: header;
+    }
+    img {
+      grid-area: picture;
+    }
+    #product-ingredients {
+      grid-area: ingredients;
+    }
+    #product-description {
+      grid-area: description;
     }
 
     img {
-        width: 100%;
-        border-radius: 1rem;
+      max-width: var(--imgMaxWidth);
     }
-
-    button {
-        background-color: var(--primary-color);
-        color: var(--light-text-color);
-        padding: 1rem;
-        border-radius: 1rem;
-        border: none;
-    }
-    button:hover {
-        background-color: var(--hover-color);
-        cursor: pointer;
-    }
-
-    @media (min-width: 600px) {
-        display: grid;
-        grid-template-columns: var(--imgMaxWidth) 1fr;
-        grid-template-areas: 
-            "picture header"
-            "picture ingredients"
-            "description description";
-        column-gap: 2rem;
-
-        header { grid-area: header; }
-        img { grid-area: picture; }
-        #product-ingredients { grid-area: ingredients; }
-        #product-description { grid-area: description; }
-
-        img {
-            max-width: var(--imgMaxWidth);
-        }
-    }
+  }
 }

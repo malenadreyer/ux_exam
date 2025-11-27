@@ -1,51 +1,57 @@
 @import "styles.css";
 
 :root {
-    --thumbnailDimension: 200px;
+  --thumbnailDimension: 200px;
+}
+
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1rem;
 }
 
 #product-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(var(--thumbnailDimension), 1fr));
-    grid-auto-rows: auto;
-    gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--thumbnailDimension), 1fr));
+  grid-auto-rows: auto;
+  gap: 2rem;
 
-    header {
-        grid-column: 1 / -1;
-        text-align: center;
-    }
+  header {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
 
-    article {
-        display: flex;
-        flex-flow: column nowrap;
-        gap: 0.5rem;
-        justify-self: center;
-        align-items: center;
-        max-width: var(--thumbnailDimension);
-        color: var(--dark-text-color);
-        
-        img {
-            width: var(--thumbnailDimension);
-            height: var(--thumbnailDimension);
-            object-fit: contain;
-            border-radius: 1rem;
-        }  
-        a {
-            text-decoration: none;
-            color: var(--dark-text-color);
-            
-        }   
-        h3 {
-            height: 2.75rem;
-        }
-        p {
-            align-self: self-start;
-        }   
-        .product-category {
-            font-size: var(--font-size-md);
-        }
+  article {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 0.5rem;
+    justify-self: center;
+    align-items: center;
+    max-width: var(--thumbnailDimension);
+    color: var(--dark-text-color);
+
+    img {
+      width: var(--thumbnailDimension);
+      height: var(--thumbnailDimension);
+      border: 0.2rem solid var(--secondary-color);
+      padding: var(--spacing-lg);
+      object-fit: contain;
     }
-    article:hover {
-        color: var(--tertiary-color);
+    a {
+      text-decoration: none;
+      color: var(--dark-text-color);
     }
+    h3 {
+      height: 2.75rem;
+    }
+    p {
+      align-self: self-start;
+    }
+    .product-category {
+      font-size: var(--font-size-md);
+    }
+  }
+  article:hover {
+    color: var(--tertiary-color);
+  }
 }
