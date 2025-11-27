@@ -1,6 +1,10 @@
 import { BASE_URL } from './info.js';
 
-// Vi starter først med hente kurven localstorage, men uden login, skal vi nok kigge på.
+// TODO: Login cart, gemmer så det er den person der er logget ind
+// TODO: Lav en function til selve formen, så jeg ikke behøver skrive det 2 gange. 
+// TODO: Ryd op i CSS, den skal være flot og udoverskuelig. 
+
+
 const getCart = () => {
     const cart = localStorage.getItem('cart');
     return cart ? JSON.parse(cart) : [];
