@@ -1,4 +1,5 @@
 import { BASE_URL } from './info.js';
+import {capitalizeFirstLetter} from './functions.js';
 
 const products = await fetch(`${BASE_URL}`) 
     .then(response => response.json())
@@ -21,9 +22,14 @@ products.forEach(product => {
 
     const linkURL = `product.html?id=${product.id}`;
     
-    const headerLink = productCard.querySelector('h3 > a');
-    headerLink.innerText = product.title;
-    assignLink(headerLink, linkURL, product.title);
+   const headerLink = productCard.querySelector('h3 > a');
+
+   const maxTitleLength = 32
+   const truncatedTitle = product.title.length > maxTitleLength
+   ? product.title.slice(0, maxTitleLength) + '...': product.title;
+
+   headerLink.innerText = truncatedTitle;
+   assignLink(headerLink, linkURL, product.title);
     
     const pictureLink = productCard.querySelector('a:has(img)');
     assignLink(pictureLink, linkURL, product.title);
@@ -33,7 +39,9 @@ products.forEach(product => {
     thumbnail.setAttribute('alt', product.title);
     
     productCard.querySelector('.product-price').innerText = product.price;
-    productCard.querySelector('.product-category').innerText = product.category;
+
+    const category = capitalizeFirstLetter(product.category);
+    productCard.querySelector('.product-category').innerText = category;
     
  
 
