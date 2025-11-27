@@ -1,27 +1,32 @@
-import { BASE_URL } from './info.js';
+import { BASE_URL } from "./info.js";
+import { capitalizeFirstLetter } from "./functions.js";
+
+const productInfo = document.querySelector("#product-info");
+productInfo.querySelector("h1").innerText = "Loading product...";
 
 const queryParams = new URLSearchParams(location.search);
-const productID = queryParams.get('id');
+const productID = queryParams.get("id");
 
 fetch(`${BASE_URL}/${productID}`)
-.then(response => response.json())
-.then(data => {
+  .then((response) => response.json())
+  .then((data) => {
     showProduct(data);
-})
-.catch(error => console.log(error));
+  })
+  .catch((error) => console.log(error));
 
 const showProduct = (info) => {
-    const productInfo = document.querySelector('#product-info');
+  productInfo.querySelector("h1").innerText = info.title;
 
-    productInfo.querySelector('h2').innerText = info.title;
+  const thumbnail = productInfo.querySelector("img");
+  thumbnail.src = info.image;
+  thumbnail.alt = info.title;
 
-    const thumbnail = productInfo.querySelector('img');
-    thumbnail.src = info.image;
-    thumbnail.alt = info.title;
+  productInfo.querySelector(".product-price").innerText = info.price;
 
-    productInfo.querySelector('.product-price').innerText = info.price;
-    productInfo.querySelector('.product-category').innerText = info.category;
+  const category = capitalizeFirstLetter(info.category);
+  productInfo.querySelector(".product-category").innerText = category;
 
-    productInfo.querySelector('#product-description').innerText = info.description;
+  const description = info.description;
+  const regex = / \/ |,\s*(?=[A-Z]|\d)/g;
+  productInfo.querySelector("#product-description").innerText = description.replace(regex, "\n\n");
 };
-

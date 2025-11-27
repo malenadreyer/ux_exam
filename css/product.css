@@ -1,4 +1,4 @@
-/* @import 'styles.css'; */
+@import "styles.css";
 
 :root {
     --imgMaxWidth: 320px;
@@ -14,26 +14,29 @@
         border-radius: 1rem;
     }
 
-    div:has(> .product-attribute) {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: center;
-        gap: 1rem;
+    button {
+        background-color: var(--primary-color);
+        color: var(--light-text-color);
+        padding: 1rem;
+        border-radius: 1rem;
+        border: none;
     }
-
-
+    button:hover {
+        background-color: var(--hover-color);
+        cursor: pointer;
+    }
 
     @media (min-width: 600px) {
         display: grid;
         grid-template-columns: var(--imgMaxWidth) 1fr;
         grid-template-areas: 
-            "header header"
+            "picture header"
             "picture ingredients"
             "description description";
         column-gap: 2rem;
 
         header { grid-area: header; }
-        div:has(img) { grid-area: picture; }
+        img { grid-area: picture; }
         #product-ingredients { grid-area: ingredients; }
         #product-description { grid-area: description; }
 
