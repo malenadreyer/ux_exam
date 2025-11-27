@@ -20,6 +20,7 @@ body > header {
           color: var(--dark-text-color);
           font-size: var(--font-size-xl);
           font-weight: var(--font-semibold);
+          font-family: var(--clickable-element-font);
 
           &:hover {
             color: var(--secondary-color);
@@ -40,13 +41,6 @@ body > header {
     object-fit: contain;
   }
 
-
-#admin_mob {
-  a {
-    justify-content: center;
-    text-align: center;
-  }
-}
 
 #desktop_menu {
   display: none;
@@ -199,13 +193,15 @@ body > header {
       li a {
         padding: var(--spacing-md) var(--spacing-xl);
         border-radius: var(--border-radius-md);
-        border: var(--border-width-md) solid var(--light-background-color);
-        color: var(--primary-color);
+        border: var(--border-width-md) solid var(--primary-color);
+        background-color: var(--primary-color);
+        color: var(--light-background-color);
+        font-weight: var(--font-semibold);
 
         &:hover {
-          border: var(--border-width-md) solid var(--hover-color);
-          background-color: var(--hover-color);
-          color: var(--dark-text-color);
+          border: var(--border-width-md) solid var(--secondary-color);
+          background-color: var(--secondary-color);
+          color: var(--light-background-color);
         }
       }
 
@@ -242,7 +238,7 @@ body > header {
       &:hover {
         border: var(--border-width-md) solid var(--hover-color);
         background-color: var(--hover-color);
-        color: var(--dark-text-color);
+        color: var(--light-text-color);
       }
     }
 
@@ -258,7 +254,7 @@ body > header {
       &:hover {
         border: var(--border-width-md) solid var(--hover-color);
         background-color: var(--hover-color);
-        color: var(--dark-text-color);
+        color: var(--light-text-color);
       }
     }
   }

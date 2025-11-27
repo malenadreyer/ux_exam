@@ -2,13 +2,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300..600&display=swap"); /* INTER */
 
 :root {
-  /* Color palette */
-  --primary-color: #503b31;
-  --secondary-color: #60463a;
-  --tertiary-color: #815d4c;
-  --hover-color: #815d4c;
-  --input-bg: #toBeFilled;
-  --focus-color: #43403e;
+    /* Color palette */
+    --primary-color: #503b31;
+    --secondary-color: #60463A;
+    --tertiary-color: #815d4c;
+    --hover-color: #815d4c;
+    --input-bg: #ded3d4;
+    --focus-color: #43403e;
 
   /* Error colors */
   --error-bg: #7a2a29;
@@ -24,9 +24,10 @@
   --dark-text-color: #2b2b2b;
   --light-text-color: #f2f0eb;
 
-  /* Typography */
-  --header-font: "Open Sans", sans-serif;
-  --main-font: "Inter", sans-serif;
+    /* Typography */
+    --header-font: ui-rounded, 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, 'Arial Rounded MT', 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
+    --main-font: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+    --clickable-element-font: system-ui, sans-serif;
 
   /* Font sizes */
   --font-size-sm: clamp(0.75rem, 1vw, 0.875rem);
