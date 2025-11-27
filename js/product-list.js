@@ -37,7 +37,7 @@ products.forEach(product => {
     productCard.querySelector('.product-category').innerText = product.category;
 
     const addToCartBtn = document.createElement('button');
-    addToCartBtn.innerText = 'Tilføj til kurv';
+    addToCartBtn.innerText = 'Add to cart';
     addToCartBtn.className = 'add-to-cart-btn';
     addToCartBtn.addEventListener('click', () => {
         addToCart(product.id);

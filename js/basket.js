@@ -59,7 +59,7 @@ const renderCheckoutForm = () => {
     form.className = 'checkout-form';
     
     // Billing address sektion
-    const billingSection = document.createElement('div');
+    const billingSection = document.createElement('section');
     billingSection.className = 'form-section';
     
     const billingTitle = document.createElement('h3');
@@ -196,7 +196,7 @@ const renderCheckoutForm = () => {
     });
 };
 
-// Håndter formular submit
+
 const handleSubmit = () => {
     const billingName = document.querySelector('#billing-name').value;
     const billingAddress = document.querySelector('#billing-address').value;
@@ -209,22 +209,21 @@ const handleSubmit = () => {
     const confirmMsg = document.querySelector('#confirm-message');
     
     if (!billingName || !billingAddress || !billingCity || !billingZip || !cardNumber || !cardExpiry || !cardCvv) {
-        confirmMsg.innerText = 'Udfyld venligst alle felter';
+        confirmMsg.innerText = 'Please fill out the form';
         confirmMsg.className = 'confirm-message error';
         return;
     }
     
-    // Clear cart
     saveCart([]);
     
-    confirmMsg.innerText = 'Tak for din ordre! Du vil modtage en bekræftelse på email.';
+    confirmMsg.innerText = 'Than for you order';
     confirmMsg.className = 'confirm-message success';
     
-    // Re-render cart to show empty state
+    
     renderCart();
 };
 
-// Render kurven
+
 const renderCart = async () => {
     const cart = getCart();
     const cartContainer = document.querySelector('#cart-items');
@@ -292,7 +291,7 @@ const renderCart = async () => {
         plusBtn.addEventListener('click', () => updateQuantity(product.id, cartItem.quantity + 1));
         
         const removeBtn = document.createElement('button');
-        removeBtn.innerText = 'Fjern';
+        removeBtn.innerText = 'Remove';
         removeBtn.className = 'remove-btn';
         removeBtn.addEventListener('click', () => removeFromCart(product.id));
         
