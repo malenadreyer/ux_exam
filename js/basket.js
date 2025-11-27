@@ -15,7 +15,8 @@ const saveCart = (cart) => {
     localStorage.setItem('cart', JSON.stringify(cart));
 };
 
-// Her tilfjer den et item til kurven, som vi bruger i product-list også, skal også in i single view siden. 
+// TODO: Hæng sammen med product siden nr jeg er kommet ind
+// Her tilfjer den et item til kurven, som vi bruger i product siden også, skal også in i single view siden. 
 export const addToCart = (productId) => {
     const cart = getCart();
     const existingItem = cart.find(item => item.id === productId);
@@ -175,13 +176,12 @@ const renderCheckoutForm = () => {
     cardRow.append(cardExpiry, cardCvv);
     paymentSection.append(paymentTitle, cardNumber, cardRow);
     
-    // Submit knap
+
     const submitBtn = document.createElement('button');
     submitBtn.innerText = 'Confirm order';
     submitBtn.className = 'submit-btn';
     submitBtn.addEventListener('click', handleSubmit);
     
-    // Confirmation message
     const confirmMsg = document.createElement('div');
     confirmMsg.id = 'confirm-message';
     confirmMsg.className = 'confirm-message';
@@ -189,7 +189,6 @@ const renderCheckoutForm = () => {
     form.append(billingSection, deliverySection, paymentSection, submitBtn, confirmMsg);
     checkoutContainer.append(form);
     
-    // Event listener for "same as billing" checkbox
     sameCheckbox.addEventListener('change', () => {
         if (sameCheckbox.checked) {
             deliveryName.value = billingName.value;
@@ -312,7 +311,6 @@ const renderCart = async () => {
     }
 };
 
-// Kør når siden loader
 if (document.querySelector('#cart-items')) {
     renderCart();
     renderCheckoutForm();

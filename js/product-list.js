@@ -1,5 +1,4 @@
 import { BASE_URL } from './info.js';
-import { addToCart } from './basket.js';
 
 const products = await fetch(`${BASE_URL}`) 
     .then(response => response.json())
