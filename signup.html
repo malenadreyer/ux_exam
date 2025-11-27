@@ -56,9 +56,10 @@
     </header>
     <main>
 
-        <form id="signup_form" aria-describedby="pwHelp">
-            <h1>Sign up</h1>
-
+        <form id="signup_form" aria-describedby="password_help">
+            <header>
+                <h1>Sign up</h1>
+            </header>
             <section id="error" class="hidden" aria-live="assertive" aria-label="Error message" aria-hidden="true">
                 <header>
                     <h2>Error</h2>
@@ -68,18 +69,6 @@
 
             <fieldset>
                 <legend class="hidden">Sign up</legend>
-
-                <div class="two-column">
-                    <div class="field">
-                        <label for="first_name">First name</label>
-                        <input id="first_name" name="first_name" type="text" autocomplete="given-name" required>
-                    </div>
-
-                    <div class="field">
-                        <label for="last_name">Last name</label>
-                        <input id="last_name" name="last_name" type="text" autocomplete="family-name" required>
-                    </div>
-                </div>
 
                 <div class="field">
                     <label for="email">Email</label>
@@ -101,29 +90,12 @@
                         character.
                     </small>
                 </div>
-
-                <div class="field">
-                    <label for="address">Address</label>
-                    <input id="address" name="address" type="text" required>
-                </div>
-
-                <div class="two-column">
-                    <div class="field">
-                        <label for="phone">Phone</label>
-                        <input id="phone" name="phone" type="tel" autocomplete="tel" required>
-                    </div>
-
-                    <div class="field">
-                        <label for="birthdate">Date of birth</label>
-                        <input id="birthdate" name="birthdate" type="date" required>
-                    </div>
-                </div>
             </fieldset>
 
             <fieldset class="field checkbox">
                 <legend class="hidden">Terms</legend>
                 <input id="terms" name="terms" type="checkbox" required>
-                <label for="terms">I accept the terms and conditions for The Pawn A/S</label>
+                <label for="terms">I accept the terms and conditions for The Pawn Vintage A/S</label>
             </fieldset>
 
             <button class="primary_button" type="submit">Sign up</button>

@@ -1,8 +1,6 @@
 @import "styles.css";
 
-/* ----------------------------------------------------
-   MAIN WRAPPER & PAGE SPACING
----------------------------------------------------- */
+/* main content area */
 main {
   h1 {
     font-size: var(--font-size-xl);
@@ -20,14 +18,12 @@ main {
     margin: auto;
   }
 
-  /* ----------------------------------------------------
-     FORM FIELD STRUCTURE
-  ---------------------------------------------------- */
+/* form fields */
   .field {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-xs);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
 
     label {
       font-size: var(--font-size-md);
@@ -40,49 +36,30 @@ main {
     input {
       width: var(--full-scale);
       min-height: var(--touch-size);
-      padding: var(--spacing-md);
+      padding: var(--spacing-xs);
       border: var(--border-width-sm) solid transparent;
       border-radius: var(--border-radius-md);
       background: var(--input-bg);
       font-size: var(--font-size-md);
       font-family: var(--main-font);
       color: var(--dark-text-color);
-      margin-bottom: var(--spacing-lg);
-    }
-
-    /* Birthdate picker */
-    #form_birthdate_field {
-      cursor: pointer;
+      margin-bottom: 0;
     }
 
     small {
       font-size: var(--font-size-sm);
       color: var(--dark-text-color);
-      margin-bottom: var(--spacing-lg);
+      margin-bottom: 0;
+      margin-top: var(--spacing-xs);
       font-family: var(--main-font);
     }
   }
 
-  /* ----------------------------------------------------
-     TWO-COLUMN LAYOUT
-  ---------------------------------------------------- */
-  .two-column {
-    display: flex;
-    gap: var(--spacing-md);
-    flex-direction: row;
-
-    .field {
-      flex: var(--flex-grow-1);
-    }
-  }
-
-  /* ----------------------------------------------------
-     CHECKBOX AREA
-  ---------------------------------------------------- */
+/* checkbox field */
   .checkbox {
     flex-direction: row;
     align-items: center;
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
 
     input {
       width: var(--checkbox-size);
@@ -101,39 +78,139 @@ main {
     }
   }
 
-  /* Checkbox focus */
+  /* checkbox focus */
   .field.checkbox:has(input:focus-visible) {
     outline: var(--border-width-md) solid var(--focus-color);
     border-radius: var(--border-radius-sm);
   }
 
-  /* ----------------------------------------------------
-     PRIMARY BUTTON
-  ---------------------------------------------------- */
+/* primary button */
   .primary_button {
-    width: var(--full-scale);
+    width: auto;
+    min-width: 200px;
+    max-width: 300px;
+    margin: 0 auto var(--spacing-lg) auto;
     min-height: var(--touch-size);
-    padding: var(--spacing-md);
-    border: none;
+    padding: var(--spacing-xs) var(--spacing-xl);
+    border: var(--border-width-md) solid transparent;
+    border-radius: var(--border-radius-md);
+    background: var(--primary-color);
+    color: var(--light-text-color);
+    font-size: var(--font-size-md);
+    font-weight: var(--font-bold);
+    font-family: var(--clickable-element-font);
+    @import "styles.css";
+
+/* main content area */
+main {
+  h1 {
+    font-size: var(--font-size-xl);
+    margin: var(--spacing-xxxl) 0 var(--spacing-xxl);
+    text-align: center;
+    font-family: var(--header-font);
+  }
+
+  @media (min-width: 768px) {
+    padding: 0 var(--spacing-5xl) var(--spacing-4xl) var(--spacing-5xl);
+  }
+
+  @media (min-width: 1024px) {
+    max-width: var(--max-main-width);
+    margin: auto;
+  }
+
+/* form fields */
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-xl);
+
+    label {
+      font-size: var(--font-size-md);
+      font-weight: var(--font-semibold);
+      font-family: var(--main-font);
+      margin-bottom: var(--spacing-sm);
+      color: var(--dark-text-color);
+    }
+
+    input {
+      width: var(--full-scale);
+      min-height: var(--touch-size);
+      padding: var(--spacing-xs);
+      border: var(--border-width-sm) solid transparent;
+      border-radius: var(--border-radius-md);
+      background: var(--input-bg);
+      font-size: var(--font-size-md);
+      font-family: var(--main-font);
+      color: var(--dark-text-color);
+      margin-bottom: 0;
+    }
+
+    small {
+      font-size: var(--font-size-sm);
+      color: var(--dark-text-color);
+      margin-bottom: 0;
+      margin-top: var(--spacing-xs);
+      font-family: var(--main-font);
+    }
+  }
+
+/* checkbox field */
+  .checkbox {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: var(--spacing-xl);
+
+    input {
+      width: var(--checkbox-size);
+      height: var(--checkbox-size);
+      padding: var(--new-touch-target);
+      accent-color: var(--primary-color);
+    }
+
+    label {
+      margin-left: var(--spacing-sm);
+      font-size: var(--font-size-sm);
+      height: var(--new-touch-target);
+      align-content: center;
+      font-family: var(--main-font);
+      color: var(--dark-text-color);
+    }
+  }
+
+  /* checkbox focus */
+  .field.checkbox:has(input:focus-visible) {
+    outline: var(--border-width-md) solid var(--focus-color);
+    border-radius: var(--border-radius-sm);
+  }
+
+/* primary button */
+  .primary_button {
+    width: auto;
+    min-width: 200px;
+    max-width: 300px;
+    margin: 0 auto var(--spacing-lg) auto;
+    min-height: var(--touch-size);
+    padding: var(--spacing-xs) var(--spacing-xl);
+    border: var(--border-width-md) solid transparent;
     border-radius: var(--border-radius-md);
     background: var(--primary-color);
     color: var(--light-text-color);
     font-weight: var(--font-bold);
-    font-family: var(--clickable-element-font);
-    margin-bottom: var(--spacing-lg);
+    font-family: var(--clickable-element-font);;
     text-align: center;
     cursor: pointer;
+    display: block;
 
     &:hover {
-      border: var(--border-width-md) solid var(--hover-color);
+      border-color: var(--hover-color);
       background-color: var(--hover-color);
       color: var(--light-text-color);
     }
   }
 
-  /* ----------------------------------------------------
-     LOGIN / SIGNUP FOOTER LINKS
-  ---------------------------------------------------- */
+/* login and signup links */
   .login_link,
   .signup_link {
     font-size: var(--font-size-md);
@@ -147,25 +224,19 @@ main {
   }
 }
 
-/* ----------------------------------------------------
-   INPUT & BUTTON FOCUS STATES
----------------------------------------------------- */
+/* input and button focus */
 input:focus,
 button:focus {
   outline: var(--border-width-md) solid var(--focus-color);
   outline-offset: var(--border-width-md);
 }
 
-/* ----------------------------------------------------
-   FIELDSET RESET
----------------------------------------------------- */
+/* fieldset reset */
 fieldset {
   border: none;
 }
 
-/* ----------------------------------------------------
-   DANGER BUTTON
----------------------------------------------------- */
+/* danger button */
 .danger_button {
   width: var(--full-scale);
   justify-content: center;
@@ -183,9 +254,81 @@ fieldset {
   }
 }
 
-/* ----------------------------------------------------
-   FORM WRAPPER
----------------------------------------------------- */
+/* form wrapper */
+form {
+  margin: 0 auto;
+  padding: 0 var(--spacing-xxl) var(--spacing-4xl) var(--spacing-xxl);
+  max-width: var(--form-max-width);
+
+  @media (min-width: 1024px) {
+    margin: auto;
+    width: var(--form-max-width);
+  }
+}
+
+/* Page-specific headline spacing */
+#login_form,
+#signup_form {
+  h1 {
+    margin-bottom: var(--spacing-xxxl);
+  }
+}
+    text-align: center;
+    cursor: pointer;
+    display: block;
+
+    &:hover {
+      border-color: var(--hover-color);
+      background-color: var(--hover-color);
+      color: var(--light-text-color);
+    }
+  }
+
+/* login and signup links */
+  .login_link,
+  .signup_link {
+    font-size: var(--font-size-md);
+    text-align: center;
+    margin-top: var(--spacing-xl);
+    font-family: var(--main-font);
+
+    a {
+      color: var(--dark-text-color);
+    }
+  }
+}
+
+/* input and button focus */
+input:focus,
+button:focus {
+  outline: var(--border-width-md) solid var(--focus-color);
+  outline-offset: var(--border-width-md);
+}
+
+/* fieldset reset */
+fieldset {
+  border: none;
+}
+
+/* danger button */
+.danger_button {
+  width: var(--full-scale);
+  justify-content: center;
+  margin: var(--spacing-lg) 0;
+  color: var(--error-text-color);
+  background-color: var(--error-bg);
+  cursor: pointer;
+  padding: var(--spacing-xl) var(--spacing-xxxl);
+  border-radius: var(--border-radius-md);
+  border: var(--border-width-md) solid var(--error-text-color);
+  font-family: var(--clickable-element-font);
+
+  &:hover {
+    background-color: var(--dark-background-color);
+  }
+}
+
+/* form wrapper */
 form {
   margin: 0 auto;
   padding: 0 var(--spacing-xxl) var(--spacing-4xl) var(--spacing-xxl);
