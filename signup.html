@@ -22,7 +22,7 @@
             </nav>
             <nav id="utility_not_logged_in" aria-hidden="true">
                 <ul>
-                    <li><a href="signup.html" title="Sign up">Sign up</a></li>
+                    <li><a href="login.html" title="Sign up">Log in</a></li>
                 </ul>
             </nav>
         </div>
@@ -54,7 +54,87 @@
         </div>
         <div id="overlay"></div>
     </header>
-    <main></main>
+    <main>
+
+        <form id="signup_form" aria-describedby="pwHelp">
+            <h1>Sign up</h1>
+
+            <section id="error" class="hidden" aria-live="assertive" aria-label="Error message" aria-hidden="true">
+                <header>
+                    <h2>Error</h2>
+                </header>
+                <p id="errorText"></p>
+            </section>
+
+            <fieldset>
+                <legend class="hidden">Sign up</legend>
+
+                <div class="two-column">
+                    <div class="field">
+                        <label for="first_name">First name</label>
+                        <input id="first_name" name="first_name" type="text" autocomplete="given-name" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="last_name">Last name</label>
+                        <input id="last_name" name="last_name" type="text" autocomplete="family-name" required>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" autocomplete="email" type="email" required>
+                </div>
+
+                <div class="field">
+                    <label for="password">Password</label>
+                    <input id="password" name="password" type="password" required>
+                </div>
+
+                <div class="field">
+                    <label for="repeat_password">Repeat password</label>
+                    <input id="repeat_password" name="repeat_password" type="password" required
+                        aria-describedby="password_help">
+                    <small id="password_elp" class="form-text">
+                        Your password must be at least 9 characters long and needs to contain at least one number and
+                        one special
+                        character.
+                    </small>
+                </div>
+
+                <div class="field">
+                    <label for="address">Address</label>
+                    <input id="address" name="address" type="text" required>
+                </div>
+
+                <div class="two-column">
+                    <div class="field">
+                        <label for="phone">Phone</label>
+                        <input id="phone" name="phone" type="tel" autocomplete="tel" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="birthdate">Date of birth</label>
+                        <input id="birthdate" name="birthdate" type="date" required>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="field checkbox">
+                <legend class="hidden">Terms</legend>
+                <input id="terms" name="terms" type="checkbox" required>
+                <label for="terms">I accept the terms and conditions for The Pawn A/S</label>
+            </fieldset>
+
+            <button class="primary_button" type="submit">Sign up</button>
+
+            <p class="login_link">
+                Already have an account?
+                <a href="login.html">Log in</a>
+            </p>
+        </form>
+    </main>
+
     <footer>
         <div id="media_icons">
             <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><img src="./assets/icons/Linkedin.svg"
