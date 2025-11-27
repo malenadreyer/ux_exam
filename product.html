@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/product.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/product.css" />
     <script src="js/product.js" type="module"></script>
+    <script type="module" src="./js/navigation.js"></script>
     <title>Product | The Pawn</title>
     <link rel="stylesheet" href="./css/index.css">
     <script type="module" src="./js/navigation.js"></script>
@@ -58,32 +58,51 @@
         <div id="overlay"></div>
     </header>
     <main>
-        <section id="product-info">
-            <header>
-                <h2></h2>
-            </header>
-            <div>
-                <img src="" alt="">
-                <div>
-                    <p class="product-attribute product-area">kr. <span class="product-price"></span></p>
-                    <p class="product-attribute product-category"></p>
-                </div>
-            </div>
-            <p id="product-description"></p>
-
-        </section>
+      <section id="product-info">
+        <header>
+          <h1></h1>
+        </header>
+        <img src="" alt="" />
+        <div>
+          <p class="product-attribute product-area">
+            <strong>Price: </strong>kr. <span class="product-price"></span>
+          </p>
+          <p class="product-attribute">
+            <strong>Category:</strong> <span class="product-category"></span>
+          </p>
+          <button id="cta">Add to cart</button>
+        </div>
+        <p id="product-description"></p>
+      </section>
     </main>
     <footer>
-        <div id="media_icons">
-            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><img src="./assets/icons/Linkedin.svg"
-                    alt="LinkedIn logo" height="30" width="30" loading="lazy"></a>
-            <a href="https://facebook.com" target="_blank" aria-label="Facebook"><img src="./assets/icons/Facebook.svg"
-                    alt="Facebook logo" height="30" width="30" loading="lazy"></a>
-            <a href="https://instagram.com" target="_blank" aria-label="Instagram"><img
-                    src="./assets/icons/Instagram.svg" alt="Instagram logo" height="30" width="30" loading="lazy"></a>
-        </div>
-        <p id="footer-copy">&copy; 2025 EK Web Development</p>
+      <div id="media_icons">
+        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"
+          ><img
+            src="./assets/icons/Linkedin.svg"
+            alt="LinkedIn logo"
+            height="30"
+            width="30"
+            loading="lazy"
+        /></a>
+        <a href="https://facebook.com" target="_blank" aria-label="Facebook"
+          ><img
+            src="./assets/icons/Facebook.svg"
+            alt="Facebook logo"
+            height="30"
+            width="30"
+            loading="lazy"
+        /></a>
+        <a href="https://instagram.com" target="_blank" aria-label="Instagram"
+          ><img
+            src="./assets/icons/Instagram.svg"
+            alt="Instagram logo"
+            height="30"
+            width="30"
+            loading="lazy"
+        /></a>
+      </div>
+      <p id="footer-copy">&copy; 2025 KEA Web Development</p>
     </footer>
-</body>
-
+  </body>
 </html>

@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products | The Pawn</title>
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="css/product-list.css">
+    <script src="js/product-list.js" type="module"></script>
     <script type="module" src="./js/navigation.js"></script>
+    <title>Products | The Pawn</title>
 </head>
 
 <body>
@@ -65,7 +66,27 @@
         </div>
         <div id="overlay"></div>
     </header>
-    <main></main>
+   <main>
+        <section id="product-list">
+            <header>
+                <h2>Products</h2>
+            </header>
+            <template id="product-card">
+                <article>
+                    <a href="" target="_self">
+                        <img src="" alt="">
+                    </a>
+                    <header>
+                        <h3>
+                            <a href="" target="_self"></a>
+                        </h3>
+                    </header>
+                    <p class="product-attribute product-category"></p>
+                    <p class="product-attribute product-area">kr. <span class="product-price"></span></p>
+                </article>
+            </template>
+        </section>
+    </main>
     <footer>
         <div id="media_icons">
             <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><img src="./assets/icons/Linkedin.svg"
@@ -75,7 +96,7 @@
             <a href="https://instagram.com" target="_blank" aria-label="Instagram"><img
                     src="./assets/icons/Instagram.svg" alt="Instagram logo" height="30" width="30" loading="lazy"></a>
         </div>
-        <p id="footer-copy">&copy; 2025 EK Web Development</p>
+        <p id="footer-copy">&copy; 2025 KEA Web Development</p>
     </footer>
 </body>
 

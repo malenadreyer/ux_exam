@@ -10,145 +10,145 @@
     --input-bg: #ded3d4;
     --focus-color: #43403e;
 
-    /* Error colors */
-    --error-bg: #7a2a29;
-    --error-text-color: #FFFFFF;
+  /* Error colors */
+  --error-bg: #7a2a29;
+  --error-text-color: #ffffff;
 
-    /* Success colors */
-    --success-bg: #FFFFFF;
-    --success-text-color: #1d5825;
+  /* Success colors */
+  --success-bg: #ffffff;
+  --success-text-color: #1d5825;
 
-    --light-background-color: #f2f0eb;
-    --dark-background-color: #2B2B2B;
+  --light-background-color: #f2f0eb;
+  --dark-background-color: #2b2b2b;
 
-    --dark-text-color: #2B2B2B;
-    --light-text-color: #f2f0eb;
+  --dark-text-color: #2b2b2b;
+  --light-text-color: #f2f0eb;
 
     /* Typography */
     --header-font: ui-rounded, 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, 'Arial Rounded MT', 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
     --main-font: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
     --clickable-element-font: system-ui, sans-serif;
 
-    /* Font sizes */
-    --font-size-sm: clamp(0.75rem, 1vw, 0.875rem);
-    --font-size-md: clamp(0.875rem, 1.2vw, 1rem);
-    --font-size-lg: clamp(1.1rem, 1.3vw, 1.25rem);
-    --font-size-xl: clamp(1.5rem, 2vw, 1.5rem);
-    --font-size-xxl: clamp(1.75rem, 3.5vw, 2.5rem);
-    --font-size-header: clamp(1.5rem, 2.5vw, 2rem);
+  /* Font sizes */
+  --font-size-sm: clamp(0.75rem, 1vw, 0.875rem);
+  --font-size-md: clamp(0.875rem, 1.2vw, 1rem);
+  --font-size-lg: clamp(1.1rem, 1.3vw, 1.25rem);
+  --font-size-xl: clamp(1.5rem, 2vw, 1.5rem);
+  --font-size-xxl: clamp(1.75rem, 3.5vw, 2.5rem);
+  --font-size-header: clamp(1.5rem, 2.5vw, 2rem);
 
-    /* Font weight */
-    --font-light: 300;
-    --font-semibold: 400;
-    --font-bold: 500;
-    --font-bolder: 600; /* MAX */
+  /* Font weight */
+  --font-light: 300;
+  --font-semibold: 400;
+  --font-bold: 500;
+  --font-bolder: 600; /* MAX */
 
-    /* Line height */
-    --standard-line-height: 1.5rem;
-    --title-line-height: 1.4;
-    --link-lineheight: 1;
+  /* Line height */
+  --standard-line-height: 1.5rem;
+  --title-line-height: 1.4;
+  --link-lineheight: 1;
 
-    /* Element spacing */
-    --spacing-minus-xxl: -2rem;
-    --spacing-xs: 0.125rem;
-    --spacing-sm: 0.25rem;
-    --spacing-md: 0.5rem;
-    --spacing-lg: 0.8rem;
-    --spacing-xl: 1rem;
-    --spacing-xxl: 1.5rem;
-    --spacing-xxxl: 2rem;
-    --spacing-4xl: 4rem;
-    --spacing-5xl: 5rem;
-    --content-width-lg: 75rem;
-    --card-height: 4.2rem;
+  /* Element spacing */
+  --spacing-minus-xxl: -2rem;
+  --spacing-xs: 0.125rem;
+  --spacing-sm: 0.25rem;
+  --spacing-md: 0.5rem;
+  --spacing-lg: 0.8rem;
+  --spacing-xl: 1rem;
+  --spacing-xxl: 1.5rem;
+  --spacing-xxxl: 2rem;
+  --spacing-4xl: 4rem;
+  --spacing-5xl: 5rem;
+  --content-width-lg: 75rem;
+  --card-height: 4.2rem;
 
-    /* Border radius */
-    --border-radius-sm: 0.25rem;
-    --border-radius-md: 0.5rem;
-    --border-radius-lg: 0.75rem;
-    --border-radius-xl: 1rem;
-    --border-radius-full: 100%;
+  /* Border radius */
+  --border-radius-sm: 0.25rem;
+  --border-radius-md: 0.5rem;
+  --border-radius-lg: 0.75rem;
+  --border-radius-xl: 1rem;
+  --border-radius-full: 100%;
 
-    /* Border width */
-    --border-width-sm: 1px;
-    --border-width-md: 2px;
-    --border-width-lg: 3px;
+  /* Border width */
+  --border-width-sm: 1px;
+  --border-width-md: 2px;
+  --border-width-lg: 3px;
 
-    /* Image sizes */
-    --image-size-sm: 150px;
-    --logo-size: 92px;
-    --social-icon-size: 30px;
+  /* Image sizes */
+  --image-size-sm: 150px;
+  --logo-size: 92px;
+  --social-icon-size: 30px;
 
-    /* Scales (for helping with responsiveness :)) */
-    --scale-minus-mini: -0.0625rem;
-    --scale-mini: 0.0625rem;
-    --scale-sm: 1.02;
-    --full-scale: 100%;
-    --width-xs: 150px;
-    --width-s: 12.5rem;
-    --width-sm: 15.625rem;
-    --width-md: 18.75rem;
-    --width-mdd: 20rem;
-    --width-lg: 25rem;
-    --height-lg: 25rem;
-    --height-xl: 28.125rem;
-    --vh-100: 100vh;
-    --vw-100: 100vw;
-    --vh-30: 35vh;
-    --vh-50: 50vh;
-    --vh-50: 60vh;
-    --error-width: 37.5rem;
-    --form-max-width: 34rem;
-    --max-main-width: 68.75rem;
-    --card-width: 15.625rem;
-    --book-detail-width: 50rem;
+  /* Scales (for helping with responsiveness :)) */
+  --scale-minus-mini: -0.0625rem;
+  --scale-mini: 0.0625rem;
+  --scale-sm: 1.02;
+  --full-scale: 100%;
+  --width-xs: 150px;
+  --width-s: 12.5rem;
+  --width-sm: 15.625rem;
+  --width-md: 18.75rem;
+  --width-mdd: 20rem;
+  --width-lg: 25rem;
+  --height-lg: 25rem;
+  --height-xl: 28.125rem;
+  --vh-100: 100vh;
+  --vw-100: 100vw;
+  --vh-30: 35vh;
+  --vh-50: 50vh;
+  --vh-50: 60vh;
+  --error-width: 37.5rem;
+  --max-width: 1024px;
+  --form-max-width: 34rem;
+  --max-main-width: 68.75rem;
+  --card-width: 15.625rem;
+  --book-detail-width: 50rem;
 
-    /* Opacity, if needed? */
-    --opacity-xs: 0.1;
-    --opacity-sm: 0.5;
-    --opacity-md: 0.8;
+  /* Opacity, if needed? */
+  --opacity-xs: 0.1;
+  --opacity-sm: 0.5;
+  --opacity-md: 0.8;
 
-    /* Blur, maybe only needed for the toasts? */
-    --blur-sm: 5px;
+  /* Blur, maybe only needed for the toasts? */
+  --blur-sm: 5px;
 
-    /* Touch, input and checkbox sizes */
-    --touch-size: 3rem;
-    --checkbox-size: 1.25rem;
-    --touch-target: 0.95rem;
-    --new-touch-target: 48px;
+  /* Touch, input and checkbox sizes */
+  --touch-size: 3rem;
+  --checkbox-size: 1.25rem;
+  --touch-target: 0.95rem;
+  --new-touch-target: 48px;
 
-    /* Side_menu, for when hidden */
-    --right-side-menu: -15.625rem;
+  /* Side_menu, for when hidden */
+  --right-side-menu: -15.625rem;
 
-    /* Z-index */
-    --z-index-1: 1;
-    --z-index-1000: 1000;
+  /* Z-index */
+  --z-index-1: 1;
+  --z-index-1000: 1000;
 
-    /* Flex-grow */
-    --flex-grow-1: 1;
+  /* Flex-grow */
+  --flex-grow-1: 1;
 
-    /* Transitions, if needed? */
-    --trasnition-shorter: 0.2s;
-    --trasnition-short: 0.3s;
+  /* Transitions, if needed? */
+  --trasnition-shorter: 0.2s;
+  --trasnition-short: 0.3s;
 
-    /* Character width */
-    --ch-width-xs: 40ch;
-    --ch-width-sm: 60ch;
-    --ch-width-md: 80ch;
+  /* Character width */
+  --ch-width-xs: 40ch;
+  --ch-width-sm: 60ch;
+  --ch-width-md: 80ch;
 
-    /* Shadow pixels? */
-    --shadow-px-sm: 2px;
-    --shadow-px-md: 4px;
-    --shadow-px-lg: 8px;
-    --shadow-px-xxl: 25px;
+  /* Shadow pixels? */
+  --shadow-px-sm: 2px;
+  --shadow-px-md: 4px;
+  --shadow-px-lg: 8px;
+  --shadow-px-xxl: 25px;
 
-    /* Hex colour def */
-    --white-hex: 255;
+  /* Hex colour def */
+  --white-hex: 255;
 
-    /* Aspect ratios */
-    --aspec-ratio-1: 1;
-    --aspec-ratio-2: 2;
-    --aspec-ratio-3: 3;
-    --aspec-ratio-4: 4;
-
+  /* Aspect ratios */
+  --aspec-ratio-1: 1;
+  --aspec-ratio-2: 2;
+  --aspec-ratio-3: 3;
+  --aspec-ratio-4: 4;
 }
