@@ -1,28 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/product.css">
     <script src="js/product.js" type="module"></script>
     <title>Product | The Pawn</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <script type="module" src="./js/navigation.js"></script>
 </head>
+
 <body>
+    <header>
+        <a href="index.html" title="Back to homepage">
+            <img src="assets/images/the-pawn-logo.webp" alt="The Pawn main Logo" class="logo" height="92" width="92">
+        </a>
+        <div id="desktop_menu">
+            <nav id="main_navigation">
+                <ul>
+                    <li><a href="index.html" title="Browse our products">Products</a></li>
+                </ul>
+            </nav>
+            <nav id="utility_not_logged_in" aria-hidden="true">
+                <ul>
+                    <li><a href="login.html" title="Log in">Log in</a></li>
+                    <li><a href="signup.html" title="Sign up">Sign up</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <button id="burger_button" aria-label="Open menu">
+            <img src="assets/icons/Menu.svg" alt="Burger-menu icon" height="48" width="48">
+        </button>
+
+        <div id="right_side_menu">
+            <button id="close_button" aria-label="Close menu">
+                <img src="assets/icons/X.svg" alt="Close menu icon" height="48" width="48">
+            </button>
+            <nav id="mobile_utility_not_logged_in" aria-hidden="true">
+                <ul>
+                    <li><a href="login.html">Log in</a></li>
+                    <li><a href="signup.html">Sign up</a></li>
+                </ul>
+            </nav>
+            <nav id="mobile_utility_logged_in" aria-hidden="true">
+                <ul>
+                    <li><button class="logout_button">Logout</button></li>
+                </ul>
+            </nav>
+            <nav id="mobile_main_navigation">
+                <ul>
+                    <li><a href="index.html">Products</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="overlay"></div>
+    </header>
     <main>
-            <section id="product-info">
-                <header>
-                    <h2></h2>
-                </header>
+        <section id="product-info">
+            <header>
+                <h2></h2>
+            </header>
+            <div>
+                <img src="" alt="">
                 <div>
-                    <img src="" alt="">
-                    <div>
-                        <p class="product-attribute product-area">kr. <span class="product-price"></span></p>
-                        <p class="product-attribute product-category"></p>
-                    </div>
+                    <p class="product-attribute product-area">kr. <span class="product-price"></span></p>
+                    <p class="product-attribute product-category"></p>
                 </div>
-                <p id="product-description"></p>
-                
-            </section>
-        </main>
+            </div>
+            <p id="product-description"></p>
+
+        </section>
+    </main>
+    <footer>
+        <div id="media_icons">
+            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><img src="./assets/icons/Linkedin.svg"
+                    alt="LinkedIn logo" height="30" width="30" loading="lazy"></a>
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook"><img src="./assets/icons/Facebook.svg"
+                    alt="Facebook logo" height="30" width="30" loading="lazy"></a>
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram"><img
+                    src="./assets/icons/Instagram.svg" alt="Instagram logo" height="30" width="30" loading="lazy"></a>
+        </div>
+        <p id="footer-copy">&copy; 2025 EK Web Development</p>
+    </footer>
 </body>
+
 </html>
