@@ -252,8 +252,9 @@ main {
     width: var(--checkbox-size);
     height: var(--checkbox-size);
     padding: var(--new-touch-target);
-    accent-color: var(--primary-color);
     cursor: pointer;
+    border-radius: none;
+    border:none;
   }
 
   label {
@@ -339,4 +340,9 @@ main {
 .checkbox-wrapper:has(input:focus-visible) {
   outline: var(--border-width-md) solid var(--focus-color);
   border-radius: var(--border-radius-sm);
+}
+
+#same-as-biling {
+    border: none;
+    border-radius: none;
 }
