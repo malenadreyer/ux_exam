@@ -7,7 +7,11 @@
     <title>Basket | The Pawn</title>
     <link rel="stylesheet" href="./css/index.css">
     <script type="module" src="./js/navigation.js"></script>
+    <link rel="stylesheet" href="./css/basket.css">
+    <script type="module" src="./js/basket.js"></script>
 </head>
+<body>
+   
 <header>
     <a href="index.html" title="Back to homepage">
         <img src="assets/images/the-pawn-logo.webp" alt="The Pawn main Logo" class="logo" height="92" width="92">
@@ -61,56 +65,103 @@
     </div>
     <div id="overlay"></div>
 </header>
+
+
 <main>
-
-</main>
-<body>
-    <header>
-        <a href="index.html" title="Back to homepage">
-            <img src="assets/images/the-pawn-logo.webp" alt="The Pawn main Logo" class="logo" height="92" width="92">
-        </a>
-        <div id="desktop_menu">
-            <nav id="main_navigation">
-                <ul>
-                    <li><a href="index.html" title="Browse our products">Products</a></li>
-                </ul>
-            </nav>
-            <nav id="utility_not_logged_in" aria-hidden="true">
-                <ul>
-                    <li><a href="login.html" title="Log in">Log in</a></li>
-                    <li><a href="signup.html" title="Sign up">Sign up</a></li>
-                </ul>
-            </nav>
+    <h1>Shopping Cart</h1>
+    
+    <div class="cart-container">
+        <!-- Left Column: Cart Items -->
+        <div class="cart-left">
+            <div id="cart-items"></div>
+            <div id="cart-summary">
+                <p>Total:</p>
+                <p id="cart-total">0 kr</p>
+            </div>
         </div>
-
-        <button id="burger_button" aria-label="Open menu">
-            <img src="assets/icons/Menu.svg" alt="Burger-menu icon" height="48" width="48">
-        </button>
-
-        <div id="right_side_menu">
-            <button id="close_button" aria-label="Close menu">
-                <img src="assets/icons/X.svg" alt="Close menu icon" height="48" width="48">
-            </button>
-            <nav id="mobile_utility_not_logged_in" aria-hidden="true">
-                <ul>
-                    <li><a href="login.html">Log in</a></li>
-                    <li><a href="signup.html">Sign up</a></li>
-                </ul>
-            </nav>
-            <nav id="mobile_utility_logged_in" aria-hidden="true">
-                <ul>
-                    <li><button class="logout_button">Logout</button></li>
-                </ul>
-            </nav>
-            <nav id="mobile_main_navigation">
-                <ul>
-                    <li><a href="index.html">Products</a></li>
-                </ul>
-            </nav>
-        </div>
-        <div id="overlay"></div>
-    </header>
-    <main></main>
+        
+        <!-- Right Column: Checkout Form -->
+        <div class="cart-right">
+            <form id="checkout-form">
+                <section class="form-section">
+                    <h3>Billing address</h3>
+                    
+                    <div class="field">
+                        <label for="billing-name">Full name</label>
+                        <input id="billing-name" name="billing-name" type="text" required>
+                    </div>
+                    
+                    <div class="field">
+                        <label for="billing-address">Address</label>
+                        <input id="billing-address" name="billing-address" type="text" required>
+                    </div>
+                    
+                    <div class="field">
+                        <label for="billing-city">Town</label>
+                        <input id="billing-city" name="billing-city" type="text" required>
+                    </div>
+                    
+                    <div class="field">
+                        <label for="billing-zip">Zip</label>
+                        <input id="billing-zip" name="billing-zip" type="text" required>
+                    </div>
+                </section>
+                
+                <section class="form-section">
+                    <h3>Shipping address</h3>
+                    
+                    <div class="field checkbox">
+                        <input type="checkbox" id="same-as-billing">
+                        <label for="same-as-billing">Same as billing address</label>
+                    </div>
+                    
+                    <div class="field">
+                        <label for="delivery-name">Full name</label>
+                        <input id="delivery-name" name="delivery-name" type="text" required>
+                    </div>
+                    
+                    <div class="field">
+                        <label for="delivery-address">Address</label>
+                        <input id="delivery-address" name="delivery-address" type="text" required>
+                    </div>
+                    
+                    <div class="field">
+                        <label for="delivery-city">Town</label>
+                        <input id="delivery-city" name="delivery-city" type="text" required>
+                    </div>
+                    
+                    <div class="field">
+                        <label for="delivery-zip">Zip</label>
+                        <input id="delivery-zip" name="delivery-zip" type="text" required>
+                    </div>
+                </section>
+                
+                <section class="form-section">
+                    <h3>Payment information</h3>
+                    
+                    <div class="field">
+                        <label for="card-number">Card number</label>
+                        <input id="card-number" name="card-number" type="text" maxlength="19" required>
+                    </div>
+                    
+                    <div class="card-row">
+                        <div class="field">
+                            <label for="card-expiry">Expiry date</label>
+                            <input id="card-expiry" name="card-expiry" type="text" placeholder="MM/YY" maxlength="5" required>
+                        </div>
+                        
+                        <div class="field">
+                            <label for="card-cvv">CVV</label>
+                            <input id="card-cvv" name="card-cvv" type="text" maxlength="3" required>
+                        </div>
+                    </div>
+                </section>
+                
+                <button class="primary_button" type="submit">Confirm order</button>
+                
+                <div id="confirm-message" class="confirm-message"></div>
+            </form>
+        </main>
     <footer>
         <div id="media_icons">
             <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><img src="./assets/icons/Linkedin.svg"
