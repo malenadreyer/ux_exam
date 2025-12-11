@@ -19,7 +19,9 @@ p, span, a, li, div {
     font-family: var(--main-font);
     color: var(--dark-text-color);
 }
-
+.hidden {
+  display: none;
+}
 /* Central Button Styling */
 .btn {
   text-decoration: none;
