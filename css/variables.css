@@ -74,6 +74,7 @@
 
   /* Image sizes */
   --image-size-sm: 150px;
+  --image-icon-base-width: 32px;
   --logo-size: 92px;
   --social-icon-size: 30px;
 
