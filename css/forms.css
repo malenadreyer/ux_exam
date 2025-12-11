@@ -4,7 +4,7 @@
 /* main content area */
 main {
   h1 {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-header);
     margin: var(--spacing-xxxl) 0 var(--spacing-xxl);
     text-align: center;
     font-family: var(--header-font);
@@ -74,13 +74,11 @@ main {
         color: var(--dark-text-color);
       }
     }
-
-    /* REMOVED: The :has(input:focus-visible) rule that was causing the issue */
   }
 
   /* login and signup links */
-  .login_link,
-  .signup_link {
+  .login-link,
+  .signup-link {
     font-size: var(--font-size-md);
     text-align: center;
     margin-top: var(--spacing-xl);
@@ -93,7 +91,7 @@ main {
 }
 
 /* primary button */
-.primary_button {
+.primary-button {
   width: auto;
   min-width: 200px;
   max-width: 300px;
@@ -131,7 +129,7 @@ fieldset {
 }
 
 /* danger button */
-.danger_button {
+.danger-button {
   width: var(--full-scale);
   justify-content: center;
   margin: var(--spacing-lg) 0;
@@ -161,8 +159,8 @@ form {
 }
 
 /* Page-specific headline spacing */
-#login_form,
-#signup_form {
+#login-form,
+#signup-form {
   h1 {
     margin-bottom: var(--spacing-xxxl);
   }

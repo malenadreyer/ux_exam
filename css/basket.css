@@ -3,7 +3,7 @@
 /* Main cart container */
 main {
   h1 {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-header);
     margin: var(--spacing-xxxl) 0 var(--spacing-xxl);
     text-align: center;
     font-family: var(--header-font);
@@ -72,7 +72,7 @@ main {
 
   img {
     width: 100%;
-    border-radius: 1rem;
+    border-radius: var(--border-radius-xl);
     background-color: white;
   }
 }
@@ -139,7 +139,7 @@ main {
   font-size: var(--font-size-md);
   font-weight: var(--font-semibold);
   color: var(--dark-text-color);
-  min-width: 40px;
+  min-width: var(--quantity-number-min-width);
   text-align: center;
   padding: var(--spacing-md) 0;
   border-left: var(--border-width-sm) solid var(--tertiary-color);
@@ -190,7 +190,6 @@ main {
   flex-direction: column;
 }
 
-/* Checkout Form Wrapper */
 #checkout-form {
   display: flex;
   flex-direction: column;

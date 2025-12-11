@@ -34,12 +34,12 @@ footer {
   #product-description,
   #cta,
   img {
-    margin-bottom: 1rem;
+    margin-bottom: var(--spacing-xl);
   }
 
   img {
     width: 100%;
-    border-radius: 1rem;
+    border-radius: var(--border-radius-lg);
   }
 
 #cta {
@@ -69,7 +69,7 @@ footer {
       "picture header"
       "picture ingredients"
       "picture description";
-    column-gap: 2rem;
+    column-gap: var(--spacing-xxxl);
 
     header {
       grid-area: header;
