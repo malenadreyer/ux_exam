@@ -25,7 +25,6 @@ main {
     display: flex;
     flex-flow: column nowrap;
     padding: var(--spacing-md);
-    gap: 0.5rem;
     gap: var( --spacing-sm);
     justify-self: center;
     align-items: center;
