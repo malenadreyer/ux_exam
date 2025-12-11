@@ -15,7 +15,7 @@ export const showModal = (header, text) => {
 // close handling fo0r the x button
 
 const modal = document.querySelector('#modal_info');
-const closeBtn = modal.querySelector('#modal_close_btn');
+const closeBtn = modal.querySelector('#modal_close_button');
 
 if (closeBtn) {
   closeBtn.addEventListener('click', () => modal.close());

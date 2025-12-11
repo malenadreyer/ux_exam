@@ -2,14 +2,14 @@ import { USERS_BASE_URL } from './info.js';
 import { showModal } from './modal.js';
 import { SESSION_STORAGE_USER_EMAIL } from './info.js';
 
-document.querySelector('#frmLogin').addEventListener('submit', (e) => {
+document.querySelector('#login_form').addEventListener('submit', (e) => {
     e.preventDefault();
 
     fetch(`${USERS_BASE_URL}/users`)
     .then(response => response.json())
     .then(data => {
-        const email = e.target.email.value.trim();
-        const password = e.target.password.value.trim();
+        const email = e.target.txtEmail.value.trim();
+        const password = e.target.txtPassword.value.trim();
 
         let found = false;
         data.forEach(user => {

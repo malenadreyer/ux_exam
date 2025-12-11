@@ -9,6 +9,7 @@ document.querySelector('#signup_form').addEventListener('submit', (e) => {
     const repeatPassword = e.target.repeat_password.value.trim();
 
     if (password !== repeatPassword) {
+        console.log('Passwords do not match');
         showModal('Validation error', 'Both passwords must match.');
         return;
     }

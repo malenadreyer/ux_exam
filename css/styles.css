@@ -9,3 +9,6 @@
     box-sizing: border-box;    
 }
 
+p {
+    font-family: var(--main-font);
+}
