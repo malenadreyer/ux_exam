@@ -2,7 +2,7 @@ import { USERS_BASE_URL } from './info.js';
 import { showModal } from './modal.js';
 import { SESSION_STORAGE_USER_EMAIL } from './info.js';
 
-document.querySelector('#login_form').addEventListener('submit', (e) => {
+document.querySelector('#login-form').addEventListener('submit', (e) => {
     e.preventDefault();
 
     fetch(`${USERS_BASE_URL}/users`)
@@ -17,7 +17,7 @@ document.querySelector('#login_form').addEventListener('submit', (e) => {
                 if (user.email === email && user.password === password) {
                     sessionStorage.setItem(SESSION_STORAGE_USER_EMAIL, email);
                     location.href = 'index.html';
-                    
+                    showModal('Welcome to the Pawn', 'You are now logged in.');
                     found = true;
                 }
             }
