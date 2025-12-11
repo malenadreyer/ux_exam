@@ -1,13 +1,18 @@
-import { BASE_URL } from './info.js';
+import { BASE_URL, SESSION_STORAGE_USER_EMAIL } from './info.js';
 import { showModal } from './modal.js';
 
 const getCart = () => {
-    const cart = localStorage.getItem('cart');
-    return cart ? JSON.parse(cart) : [];
+    const email = sessionStorage.getItem(SESSION_STORAGE_USER_EMAIL)
+    if (email) return [];
+
+    const cart = localStorage.getItem(`cart_${email}`)
 };
 
 const saveCart = (cart) => {
-    localStorage.setItem('cart', JSON.stringify(cart));
+    const email = sessionStorage.getItem(SESSION_STORAGE_USER_EMAIL);
+    if(email) return;
+
+    localStorage.setItem(`cart${email}`, JSON.stringify(cart));
 };
 
 export const addToCart = (productInfo) => {
@@ -76,6 +81,11 @@ const handleSubmit = (e) => {
 };
 
 const renderCart = async () => {
+    const email = sessionStorage.setItem(SESSION_STORAGE_USER_EMAIL, email)
+    if (!email) {
+        location.hrefc = 'index.html';
+        found = true;
+    }
     const cart = getCart();
     const cartContainer = document.querySelector('#cart-items');
     const totalElement = document.querySelector('#cart-total');

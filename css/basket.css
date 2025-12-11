@@ -190,7 +190,6 @@ main {
   flex-direction: column;
 }
 
-/* Checkout Form Wrapper */
 #checkout-form {
   display: flex;
   flex-direction: column;
