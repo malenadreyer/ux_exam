@@ -1,6 +1,5 @@
-import { USERS_BASE_URL } from './info.js';
 import { showModal } from './modal.js';
-import { SESSION_STORAGE_USER_EMAIL } from './info.js';
+import { SESSION_STORAGE_USER_EMAIL, USERS_BASE_URL } from './info.js';
 
 document.querySelector('#login-form').addEventListener('submit', (e) => {
     e.preventDefault();
@@ -16,8 +15,13 @@ document.querySelector('#login-form').addEventListener('submit', (e) => {
             if (!found) {
                 if (user.email === email && user.password === password) {
                     sessionStorage.setItem(SESSION_STORAGE_USER_EMAIL, email);
-                    location.href = 'index.html';
-                    showModal('Welcome to the Pawn', 'You are now logged in.');
+
+                    showModal('Login succesfull', 'Welcome back!');
+                    setTimeout(() => {
+                        location.href = 'index.html';
+                    }, 1500);
+                    
+                    
                     found = true;
                 }
             }
@@ -25,7 +29,7 @@ document.querySelector('#login-form').addEventListener('submit', (e) => {
 
         if (!found) {
             showModal('Validation error', 'Incorrect credentials.');
-        }
+        } 
     })
     .catch(error => console.log(error));
 });

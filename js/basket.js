@@ -3,19 +3,25 @@ import { showModal } from './modal.js';
 
 const getCart = () => {
     const email = sessionStorage.getItem(SESSION_STORAGE_USER_EMAIL)
-    if (email) return [];
+    if (!email) return [];
 
     const cart = localStorage.getItem(`cart_${email}`)
+    return cart ? JSON.parse(cart) : [];
 };
 
 const saveCart = (cart) => {
     const email = sessionStorage.getItem(SESSION_STORAGE_USER_EMAIL);
-    if(email) return;
+    if(!email) return;
 
-    localStorage.setItem(`cart${email}`, JSON.stringify(cart));
+    localStorage.setItem(`cart_${email}`, JSON.stringify(cart));
 };
 
 export const addToCart = (productInfo) => {
+    const email = sessionStorage.getItem(SESSION_STORAGE_USER_EMAIL);
+    if (!email) {
+        location.href = 'login.html';
+        return;
+    }
     const cart = getCart();
     const productId = Number(productInfo);
     const existingItem = cart.find(item => item.id === productId);
@@ -81,14 +87,15 @@ const handleSubmit = (e) => {
 };
 
 const renderCart = async () => {
-    const email = sessionStorage.setItem(SESSION_STORAGE_USER_EMAIL, email)
+    const email = sessionStorage.getItem(SESSION_STORAGE_USER_EMAIL)
     if (!email) {
-        location.hrefc = 'index.html';
-        found = true;
+        location.href = 'login.html';
+        return;
     }
     const cart = getCart();
     const cartContainer = document.querySelector('#cart-items');
     const totalElement = document.querySelector('#cart-total');
+    
     
     if (!cartContainer) return;
     
@@ -168,7 +175,7 @@ const renderCart = async () => {
     cartContainer.append(fragment);
     
     if (totalElement) {
-        totalElement.innerText = `${total} kr`;
+        totalElement.innerText = `${total.toFixed(2)} kr`;
     }
 };
 
