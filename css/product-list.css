@@ -7,14 +7,14 @@
 main {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: var(--spacing-xxxl) var( --spacing-xl);
 }
 
 #product-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(var(--thumbnailDimension), 1fr));
   grid-auto-rows: auto;
-  gap: 2rem;
+  gap: var(--spacing-xxxl);
 
   header {
     grid-column: 1 / -1;
@@ -26,6 +26,7 @@ main {
     flex-flow: column nowrap;
     padding: var(--spacing-md);
     gap: 0.5rem;
+    gap: var( --spacing-sm);
     justify-self: center;
     align-items: center;
     max-width: var(--thumbnailDimension);
@@ -35,15 +36,15 @@ main {
     img {
       width: var(--thumbnailDimension);
       height: var(--thumbnailDimension);
+      border: var( --spacing-sm) solid var(--secondary-color);
       padding: var(--spacing-lg);
       object-fit: contain;
     }
     a {
       text-decoration: none;
     }
-    h2 {
-      font-size: var(--font-size-md);
-      height: 2.75rem;
+    h3 {
+      height: var(--font-size-xl);
     }
     p {
       align-self: self-start;
