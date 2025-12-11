@@ -1,4 +1,5 @@
 import { BASE_URL } from './info.js';
+import { showModal } from './modal.js';
 
 const getCart = () => {
     const cart = localStorage.getItem('cart');
@@ -69,8 +70,7 @@ const handleSubmit = (e) => {
     
     saveCart([]);
     
-    confirmMsg.innerText = 'Thank you for your order';
-    confirmMsg.className = 'confirm-message success';
+   showModal('Order confirmed', 'Thank you for your order!')
     
     renderCart();
 };
@@ -162,7 +162,7 @@ const renderCart = async () => {
     }
 };
 
-// Initialize
+
 const form = document.querySelector('#checkout-form');
 const sameCheckbox = document.querySelector('#same-as-billing');
 

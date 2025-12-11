@@ -3,7 +3,7 @@ export const showModal = (header, text) => {
   modal.querySelector('h2').innerText = header;
   modal.querySelector('.modal_message').innerText = text;
 
-  // Open tjhe modal
+  // Open the modal
   modal.showModal();
 
   // add close behavior to all modal buttons
