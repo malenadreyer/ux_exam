@@ -170,8 +170,7 @@ body > header {
     }
 
     #main-navigation,
-    #utility-not-logged-in,
-    #utility-logged-in {
+    #utility{
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -201,8 +200,7 @@ body > header {
   }
 }
 
-#utility-not-logged-in,
-#utility-logged-in {
+#utility{
   margin-left: auto;
 
   ul {

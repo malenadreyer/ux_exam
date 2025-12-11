@@ -146,7 +146,6 @@ fieldset {
   }
 }
 
-/* form wrapper */
 form {
   margin: 0 auto;
   padding: 0 var(--spacing-xxl) var(--spacing-4xl);
@@ -158,7 +157,6 @@ form {
   }
 }
 
-/* Page-specific headline spacing */
 #login-form,
 #signup-form {
   h1 {

@@ -26,7 +26,7 @@
                     <li><a href="index.html" title="Browse products" class="btn">Products</a></li>
                 </ul>
             </nav>
-            <nav id="utility-not-logged-in" aria-hidden="true">
+            <nav id="utility" aria-hidden="true">
                 <ul>
                     <li><a href="login.html" id="login" class="btn btn-outline" title="Log in">Log in</a></li>
                     <li><a href="signup.html" id="signup" class="btn btn-outline" title="Sign up">Sign up</a></li>
@@ -74,20 +74,17 @@
 
 
     <main>
-        <h1>Shopping Cart</h1>
-
+        <header>
+            <h1>Shopping Cart</h1>
+        </header>
         <div class="cart-container">
-            <!-- Left Column: Cart Items -->
             <div class="cart-left">
                 <div id="cart-items"></div>
                 <div id="cart-summary">
-                    <p>Total:</p>
+                    <h4>Total:</h4>
                     <p id="cart-total">0 kr</p>
                 </div>
             </div>
-
-            <!-- Right Column: Checkout Form -->
-            <div class="cart-right">
                 <form id="checkout-form">
                     <section class="form-section">
                         <h3>Billing address</h3>
@@ -112,7 +109,6 @@
                             <input id="billing-zip" name="billing-zip" type="text" required>
                         </div>
                     </section>
-
                     <section class="form-section">
                         <h3>Shipping address</h3>
 
