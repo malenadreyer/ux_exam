@@ -12,6 +12,7 @@
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--header-font);
     color: var(--dark-text-color);
+    font-weight:var(--font-bolder);
 }
 
 p, span, a, li, div {

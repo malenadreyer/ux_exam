@@ -1,6 +1,6 @@
 dialog {
     margin: auto;
-    border: 4px solid var(--primary-color);
+    border: var(--border-radius-xl) solid var(--primary-color);
     border-radius: var(--spacing-lg);
     padding: 0;
     max-width: min(90vw, 320px);

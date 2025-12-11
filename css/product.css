@@ -34,19 +34,19 @@ footer {
   #product-description,
   #cta,
   img {
-    margin-bottom: 1rem;
+    margin-bottom: var(--spacing-xl);
   }
 
   img {
     width: 100%;
-    border-radius: 1rem;
+    border-radius: var(--border-radius-lg);
   }
 
   button {
     background-color: var(--primary-color);
     color: var(--light-text-color);
-    padding: 1rem;
-    border-radius: 1rem;
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-xl);
     border: none;
   }
   button:hover {
@@ -61,7 +61,7 @@ footer {
       "picture header"
       "picture ingredients"
       "picture description";
-    column-gap: 2rem;
+    column-gap: var(--spacing-xxxl);
 
     header {
       grid-area: header;
