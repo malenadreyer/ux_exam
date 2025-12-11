@@ -7,14 +7,14 @@
 main {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: var(--spacing-xxxl) var( --spacing-xl);
 }
 
 #product-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(var(--thumbnailDimension), 1fr));
   grid-auto-rows: auto;
-  gap: 2rem;
+  gap: var(--spacing-xxxl);
 
   header {
     grid-column: 1 / -1;
@@ -24,7 +24,7 @@ main {
   article {
     display: flex;
     flex-flow: column nowrap;
-    gap: 0.5rem;
+    gap: var( --spacing-sm);
     justify-self: center;
     align-items: center;
     max-width: var(--thumbnailDimension);
@@ -33,7 +33,7 @@ main {
     img {
       width: var(--thumbnailDimension);
       height: var(--thumbnailDimension);
-      border: 0.2rem solid var(--secondary-color);
+      border: var( --spacing-sm) solid var(--secondary-color);
       padding: var(--spacing-lg);
       object-fit: contain;
     }
@@ -42,7 +42,7 @@ main {
       color: var(--dark-text-color);
     }
     h3 {
-      height: 2.75rem;
+      height: var(--font-size-xl);
     }
     p {
       align-self: self-start;
