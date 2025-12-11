@@ -24,34 +24,39 @@ main {
   article {
     display: flex;
     flex-flow: column nowrap;
+    padding: var(--spacing-md);
     gap: 0.5rem;
     justify-self: center;
     align-items: center;
     max-width: var(--thumbnailDimension);
-    color: var(--dark-text-color);
+    box-shadow: 0 var(--shadow-px-sm) var(--shadow-px-md) rgba(0, 0, 0, var(--opacity-xs));
+    border-radius: var(--border-radius-md);
 
     img {
       width: var(--thumbnailDimension);
       height: var(--thumbnailDimension);
-      border: 0.2rem solid var(--secondary-color);
       padding: var(--spacing-lg);
       object-fit: contain;
     }
     a {
       text-decoration: none;
-      color: var(--dark-text-color);
     }
-    h3 {
+    h2 {
+      font-size: var(--font-size-md);
       height: 2.75rem;
     }
     p {
       align-self: self-start;
     }
     .product-category {
-      font-size: var(--font-size-md);
+      font-size: var(--font-size-sm);
     }
   }
   article:hover {
-    color: var(--tertiary-color);
+    box-shadow: 0 var(--shadow-px-sm) var(--shadow-px-lg) rgba(0, 0, 0, var(--opacity-xs));
+
+    > h2 {
+      color: blue;
+    }
   }
 }
