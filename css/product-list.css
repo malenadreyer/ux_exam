@@ -35,15 +35,15 @@ main {
     img {
       width: var(--thumbnailDimension);
       height: var(--thumbnailDimension);
-      border: var( --spacing-sm) solid var(--secondary-color);
       padding: var(--spacing-lg);
       object-fit: contain;
     }
     a {
       text-decoration: none;
     }
-    h3 {
-      height: var(--font-size-xl);
+    h2 {
+      font-size: var(--font-size-md);
+      height: var(--card-spacing);
     }
     p {
       align-self: self-start;
@@ -54,9 +54,5 @@ main {
   }
   article:hover {
     box-shadow: 0 var(--shadow-px-sm) var(--shadow-px-lg) rgba(0, 0, 0, var(--opacity-xs));
-
-    > h2 {
-      color: blue;
-    }
   }
 }
