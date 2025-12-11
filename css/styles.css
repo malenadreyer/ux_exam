@@ -9,6 +9,12 @@
     box-sizing: border-box;    
 }
 
-p {
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--header-font);
+    color: var(--dark-text-color);
+}
+
+p, span, a, li, div {
     font-family: var(--main-font);
+    color: var(--dark-text-color);
 }

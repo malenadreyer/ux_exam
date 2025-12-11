@@ -22,9 +22,9 @@ products.forEach(product => {
 
     const linkURL = `product.html?id=${product.id}`;
     
-   const headerLink = productCard.querySelector('h3 > a');
+   const headerLink = productCard.querySelector('h2 > a');
 
-   const maxTitleLength = 32
+   const maxTitleLength = 30;
    const truncatedTitle = product.title.length > maxTitleLength
    ? product.title.slice(0, maxTitleLength) + '...': product.title;
 
