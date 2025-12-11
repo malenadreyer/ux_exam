@@ -4,9 +4,23 @@
   --imgMaxWidth: 320px;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+  margin: 0;
+}
+
 main {
   margin: 0 var(--spacing-xl);
+  height: 100%; 
+  flex-grow: 1;
 }
+
+footer {
+  width: 100%;
+}
+
 @media (min-width: 600px) {
   main {
     max-width: var(--max-width);
