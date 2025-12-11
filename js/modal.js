@@ -1,13 +1,13 @@
 export const showModal = (header, text) => {
-  const modal = document.querySelector('#modal_info');
+  const modal = document.querySelector('#modal-info');
   modal.querySelector('h2').innerText = header;
-  modal.querySelector('.modal_message').innerText = text;
+  modal.querySelector('.modal-message').innerText = text;
 
   // Open the modal
   modal.showModal();
 
   // add close behavior to all modal buttons
-  modal.querySelectorAll('.modal_button').forEach(btn => {
+  modal.querySelectorAll('.modal-button').forEach(btn => {
     btn.addEventListener('click', () => modal.close());
   });
 };

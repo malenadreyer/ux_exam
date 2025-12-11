@@ -1,7 +1,7 @@
 // Menu functionality constants and their classes O_o
-const burgerButton = document.getElementById('burger_button');
-const closeButton = document.getElementById('close_button');
-const rightSideMenu = document.getElementById('right_side_menu');
+const burgerButton = document.getElementById('burger-button');
+const closeButton = document.getElementById('close-button');
+const rightSideMenu = document.getElementById('right-side-menu');
 const overlay = document.getElementById('overlay');
 
 // Open menu
