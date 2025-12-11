@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/product-list.css">
     <script src="js/product-list.js" type="module"></script>
     <script type="module" src="./js/navigation.js"></script>
+    <script src="js/logout.js" type="module"></script>
+    <script src="js/loginCheck.js" type="module"></script>
     <title>Products | The Pawn</title>
 </head>
 
@@ -23,13 +25,13 @@
             </nav>
             <nav id="utility-not-logged-in" aria-hidden="true">
                 <ul>
+                    <li><a href="login.html" id="login" class="btn btn-outline" title="Log in">Log in</a></li>
+                    <li><a href="signup.html" id="signup" class="btn btn-outline" title="Sign up">Sign up</a></li>
                     <li>
-                        <a href="basket.html" title="View cart">
+                        <a href="basket.html" id="cart" class="hidden" title="View cart">
                             <img src="assets/icons/cart.svg" alt="Shopping cart" height="24" width="24">
-                        </a>
-                    </li>
-                    <li><a href="login.html" title="Log in">Log in</a></li>
-                    <li><a href="signup.html" title="Sign up">Sign up</a></li>
+                        </a></li>
+                    <li id="logout" class="hidden"><button id="btnLogout">Log out</button></li>
                 </ul>
             </nav>
         </div>
