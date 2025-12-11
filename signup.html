@@ -7,6 +7,7 @@
     <title>Signup | The Pawn</title>
     <link rel="stylesheet" href="./css/index.css">
     <script type="module" src="./js/navigation.js"></script>
+    <script type="module" src="./js/signup.js"></script>
 </head>
 
 <body>
@@ -60,16 +61,8 @@
             <header>
                 <h1>Sign up</h1>
             </header>
-            <section id="error" class="hidden" aria-live="assertive" aria-label="Error message" aria-hidden="true">
-                <header>
-                    <h2>Error</h2>
-                </header>
-                <p id="errorText"></p>
-            </section>
-
             <fieldset>
-                <legend class="hidden">Sign up</legend>
-
+                <legend class="hidden">Signup form</legend>
                 <div class="field">
                     <label for="email">Email</label>
                     <input id="email" name="email" autocomplete="email" type="email" required>
@@ -77,18 +70,17 @@
 
                 <div class="field">
                     <label for="password">Password</label>
-                    <input id="password" name="password" type="password" required>
-                </div>
-
-                <div class="field">
-                    <label for="repeat_password">Repeat password</label>
-                    <input id="repeat_password" name="repeat_password" type="password" required
-                        aria-describedby="password_help">
-                    <small id="password_elp" class="form-text">
+                    <input id="password" name="password" type="password" required aria-describedby="password_help">
+                    <small id="password_help" class="form-text">
                         Your password must be at least 9 characters long and needs to contain at least one number and
                         one special
                         character.
                     </small>
+                </div>
+
+                <div class="field">
+                    <label for="repeat_password">Repeat password</label>
+                    <input id="repeat_password" name="repeat_password" type="password" required>
                 </div>
             </fieldset>
 
@@ -118,6 +110,13 @@
         </div>
         <p id="footer-copy">&copy; 2025 EK Web Development</p>
     </footer>
+    <dialog id="modal_info" class="modal">
+        <div class="modal_content">
+            <h2></h2>
+            <p class="modal_message"></p>
+            <button class="modal_button">&times</button>
+        </div>
+    </dialog>
 </body>
 
 </html>

@@ -18,6 +18,7 @@ const fragment = document.createDocumentFragment();
 products.forEach(product => {
     
     const productCard = document.querySelector('#product-card').content.cloneNode(true);
+    
 
     const linkURL = `product.html?id=${product.id}`;
     
@@ -42,7 +43,13 @@ products.forEach(product => {
     const category = capitalizeFirstLetter(product.category);
     productCard.querySelector('.product-category').innerText = category;
     
+ 
+
     fragment.append(productCard);
+
+    
 });
+
+
 
 document.querySelector('#product-list').append(fragment);

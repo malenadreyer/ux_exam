@@ -1,0 +1,72 @@
+dialog {
+    margin: auto;
+    border: 4px solid var(--primary-color);
+    border-radius: var(--spacing-lg);
+    padding: 0;
+    max-width: min(90vw, 320px);
+    width: 100%;
+    
+    .modal_content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: var(--spacing-md);
+        gap: var(--spacing-md);
+    }
+
+    h2 {
+        margin-top: var(--spacing-lg);
+        color: var(--error-color);
+    }
+
+    p {
+        font-size: var(--font-size-lg);
+        margin: var(--spacing-lg) 0;
+    }
+
+
+    .modal_button {
+  width: auto;
+  margin: 0 auto var(--spacing-lg);
+  min-height: var(--touch-size);
+  padding: var(--spacing-xs) var(--spacing-xl);
+  border: var(--border-width-md) solid transparent;
+  border-radius: var(--border-radius-md);
+  background: var(--primary-color);
+  color: var(--light-text-color);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-bold);
+  font-family: var(--clickable-element-font);
+  text-align: center;
+  cursor: pointer;
+  display: block;
+
+  &:hover {
+    border-color: var(--hover-color);
+    background-color: var(--hover-color);
+    color: var(--light-text-color);
+  }
+
+    }
+}
+
+/* Backdrop styling */
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    dialog {
+        max-width: 95vw;
+        
+        .modal_content {
+            padding: var(--spacing-lg);
+        }
+        
+        h2 {
+            font-size: var(--font-size-lg);
+        }
+    }
+}
