@@ -1,7 +1,7 @@
 import { USERS_BASE_URL } from './info.js';
 import { showModal } from './modal.js';
 
-document.querySelector('#signup_form').addEventListener('submit', (e) => {
+document.querySelector('#signup-form').addEventListener('submit', (e) => {
     e.preventDefault();
 
     const email = e.target.email.value.trim();

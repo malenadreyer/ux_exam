@@ -63,26 +63,42 @@ const updateQuantity = (productInfo, quantity) => {
 const handleSubmit = (e) => {
     e.preventDefault();
     
-    const billingName = document.querySelector('#billing-name').value;
-    const billingAddress = document.querySelector('#billing-address').value;
-    const billingCity = document.querySelector('#billing-city').value;
-    const billingZip = document.querySelector('#billing-zip').value;
-    const cardNumber = document.querySelector('#card-number').value;
-    const cardExpiry = document.querySelector('#card-expiry').value;
-    const cardCvv = document.querySelector('#card-cvv').value;
+    const billingName = document.querySelector('#billing-name').value.trim();
+    const billingAddress = document.querySelector('#billing-address').value.trim();
+    const billingCity = document.querySelector('#billing-city').value.trim();
+    const billingZip = document.querySelector('#billing-zip').value.trim();
+    const cardNumber = document.querySelector('#card-number').value.trim();
+    const cardExpiry = document.querySelector('#card-expiry').value.trim();
+    const cardCvv = document.querySelector('#card-cvv').value.trim();
     
     const confirmMsg = document.querySelector('#confirm-message');
     
     if (!billingName || !billingAddress || !billingCity || !billingZip || !cardNumber || !cardExpiry || !cardCvv) {
-        confirmMsg.innerText = 'Please fill out the form';
-        confirmMsg.className = 'confirm-message error';
+       showModal('Validation error', 'Please ill out all fields')
+        return;
+    }
+
+    if (!/^\d{16}$/.test(cardNumber.replace(/\s/g, ''))) {
+        showModal('Validation error', 'Card number must be 16 digits')
+        return;
+    }
+    
+    //  CVV, 3 eller 4 cifre, konly numbers
+    if (!/^\d{3,4}$/.test(cardCvv)) {
+        showModal('Validation error', 'CVV must be 3 or 4 digits');
+        return;
+    }
+    
+    // mm & yy format)
+    if (!/^(0[1-9]|1[0-2])\/\d{2}$/.test(cardExpiry)) {
+        showModal('Validation error', 'Expiry date must be in MM/YY format (e.g. 12/25)');
+
         return;
     }
     
     saveCart([]);
-    
-   showModal('Order confirmed', 'Thank you for your order!')
-    
+    showModal('Order confirmed', 'Thank you for your order!')
+    e.target.reset();
     renderCart();
 };
 
