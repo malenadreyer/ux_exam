@@ -48,12 +48,14 @@ document.querySelector('#signup-form').addEventListener('submit', (e) => {
         }
         return response.json();
     })
-    .then((data) => {
-        if (data) {
-            showModal('Signed up', 'The new user was created successfully.');
-            e.target.reset();
-        }
-    })
+.then((data) => {
+    if (data) {
+        showModal('Signed up', 'The new user was created successfully.');
+        setTimeout(() => {
+            location.href = 'login.html';
+        }, 1000);
+    }
+})
     .catch(error => {
         console.error('Error:', error);
         showModal('Error', 'Failed to create user. Please try again.');

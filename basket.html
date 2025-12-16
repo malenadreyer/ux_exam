@@ -85,85 +85,85 @@
                     <p id="cart-total">0 kr</p>
                 </div>
             </div>
-                <form id="checkout-form">
-                    <section class="form-section">
-                        <h3>Billing address</h3>
+            <form id="checkout-form">
+                <section class="form-section">
+                    <h3>Billing address</h3>
+
+                    <div class="field">
+                        <label for="billing-name">Full name</label>
+                        <input id="billing-name" name="billing-name" type="text" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="billing-address">Address</label>
+                        <input id="billing-address" name="billing-address" type="text" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="billing-city">Town</label>
+                        <input id="billing-city" name="billing-city" type="text" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="billing-zip">Zip</label>
+                        <input id="billing-zip" name="billing-zip" type="text" required>
+                    </div>
+                </section>
+                <section class="form-section">
+                    <h3>Shipping address</h3>
+
+                    <div class="field checkbox">
+                        <input type="checkbox" id="same-as-billing">
+                        <label for="same-as-billing">Same as billing address</label>
+                    </div>
+
+                    <div class="field">
+                        <label for="delivery-name">Full name</label>
+                        <input id="delivery-name" name="delivery-name" type="text" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="delivery-address">Address</label>
+                        <input id="delivery-address" name="delivery-address" type="text" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="delivery-city">Town</label>
+                        <input id="delivery-city" name="delivery-city" type="text" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="delivery-zip">Zip</label>
+                        <input id="delivery-zip" name="delivery-zip" type="text" required>
+                    </div>
+                </section>
+
+                <section class="form-section">
+                    <h3>Payment information</h3>
+
+                    <div class="field">
+                        <label for="card-number">Card number</label>
+                        <input id="card-number" name="card-number" type="text" maxlength="19" required>
+                    </div>
+
+                    <div class="card-row">
+                        <div class="field">
+                            <label for="card-expiry">Expiry date</label>
+                            <input id="card-expiry" name="card-expiry" type="text" placeholder="MM/YY" maxlength="5"
+                                required>
+                        </div>
 
                         <div class="field">
-                            <label for="billing-name">Full name</label>
-                            <input id="billing-name" name="billing-name" type="text" required>
+                            <label for="card-cvv">CVV</label>
+                            <input id="card-cvv" name="card-cvv" type="text" maxlength="3" required>
                         </div>
+                    </div>
+                </section>
 
-                        <div class="field">
-                            <label for="billing-address">Address</label>
-                            <input id="billing-address" name="billing-address" type="text" required>
-                        </div>
+                <button class="primary-button" type="submit">Confirm order</button>
 
-                        <div class="field">
-                            <label for="billing-city">Town</label>
-                            <input id="billing-city" name="billing-city" type="text" required>
-                        </div>
-
-                        <div class="field">
-                            <label for="billing-zip">Zip</label>
-                            <input id="billing-zip" name="billing-zip" type="text" required>
-                        </div>
-                    </section>
-                    <section class="form-section">
-                        <h3>Shipping address</h3>
-
-                        <div class="field checkbox">
-                            <input type="checkbox" id="same-as-billing">
-                            <label for="same-as-billing">Same as billing address</label>
-                        </div>
-
-                        <div class="field">
-                            <label for="delivery-name">Full name</label>
-                            <input id="delivery-name" name="delivery-name" type="text" required>
-                        </div>
-
-                        <div class="field">
-                            <label for="delivery-address">Address</label>
-                            <input id="delivery-address" name="delivery-address" type="text" required>
-                        </div>
-
-                        <div class="field">
-                            <label for="delivery-city">Town</label>
-                            <input id="delivery-city" name="delivery-city" type="text" required>
-                        </div>
-
-                        <div class="field">
-                            <label for="delivery-zip">Zip</label>
-                            <input id="delivery-zip" name="delivery-zip" type="text" required>
-                        </div>
-                    </section>
-
-                    <section class="form-section">
-                        <h3>Payment information</h3>
-
-                        <div class="field">
-                            <label for="card-number">Card number</label>
-                            <input id="card-number" name="card-number" type="text" maxlength="19" required>
-                        </div>
-
-                        <div class="card-row">
-                            <div class="field">
-                                <label for="card-expiry">Expiry date</label>
-                                <input id="card-expiry" name="card-expiry" type="text" placeholder="MM/YY" maxlength="5"
-                                    required>
-                            </div>
-
-                            <div class="field">
-                                <label for="card-cvv">CVV</label>
-                                <input id="card-cvv" name="card-cvv" type="text" maxlength="3" required>
-                            </div>
-                        </div>
-                    </section>
-
-                    <button class="primary-button" type="submit">Confirm order</button>
-
-                    <div id="confirm-message" class="confirm-message"></div>
-                </form>
+                <div id="confirm-message" class="confirm-message"></div>
+            </form>
     </main>
     <footer>
         <div id="media-icons">
