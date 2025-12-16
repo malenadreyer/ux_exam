@@ -13,11 +13,11 @@ export const showModal = (header, text) => {
 };
 
 // close handling for the x button
-const modal = document.querySelector('#modal_info');
+const modal = document.querySelector('#modal-info');
 
 // Only try to add event listeners if the modal actually exists
 if (modal) {
-  const closeBtn = modal.querySelector('#modal_close_button');
+  const closeBtn = modal.querySelector('#modal-close-button');
   if (closeBtn) {
     closeBtn.addEventListener('click', () => modal.close());
   }

@@ -1,11 +1,6 @@
 {
   "users": [
     {
-      "id": "d15c",
-      "email": "d@d.com",
-      "password": "Webdevelopment123!"
-    },
-    {
       "id": "4c0b",
       "email": "d@d.com",
       "password": "Webdevelopment123!"
@@ -14,6 +9,11 @@
       "id": "f909",
       "email": "malenadreyer@gmail.com",
       "password": "Tester33!"
+    },
+    {
+      "id": "a4bf",
+      "email": "luke@skywalker.com",
+      "password": "Revengeofthesith123!"
     }
   ]
 }
