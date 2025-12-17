@@ -6,14 +6,14 @@
       "password": "Webdevelopment123!"
     },
     {
-      "id": "f909",
-      "email": "malenadreyer@gmail.com",
-      "password": "Tester33!"
-    },
-    {
       "id": "a4bf",
       "email": "luke@skywalker.com",
       "password": "Revengeofthesith123!"
+    },
+    {
+      "id": "88c3",
+      "email": "malenadreyer@gmail.com",
+      "password": "Tester33!"
     }
   ]
 }
