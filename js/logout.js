@@ -1,6 +1,12 @@
 import { SESSION_STORAGE_USER_EMAIL } from './info.js';
 
-document.querySelector('#logout-btn').addEventListener('click', () => {
+const handleLogout = () => {
     sessionStorage.removeItem(SESSION_STORAGE_USER_EMAIL);
-    location.reload();
-});
+    window.location.href = 'index.html';
+};
+
+// Desktop logout button
+document.querySelector('#logout-btn')?.addEventListener('click', handleLogout);
+
+// Mobile logout button
+document.querySelector('#mobile-logout .logout-button')?.addEventListener('click', handleLogout);

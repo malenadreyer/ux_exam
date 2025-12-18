@@ -12,7 +12,7 @@ body > header {
 
       li {
          
-        margin: 0 var(--spacing-xl);
+        margin: var(--spacing-xl);
         color: var(--dark-text-color);
 
         a {
@@ -93,42 +93,58 @@ body > header {
   list-style: none;
   padding: 0;
 
-  a {
-    display: flex;
-  }
-
-  a:last-child {
-    padding: var(--spacing-lg) 0;
-  }
 }
 
-#mobile-utility-not-logged-in ul,
-#mobile-utility-logged-in ul {
+#mobile-utility-not-logged-in ul {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   border-bottom: var(--border-width-sm) solid var(--tertiary-color);
   padding-bottom: var(--spacing-lg);
+  padding-top: var(--spacing-lg);
 }
 
-#mobile-utility-not-logged-in li,
-#mobile-utility-logged-in li {
-  flex: var(--flex-grow-1);
+#mobile-utility-not-logged-in li {
   text-align: center;
 }
 
-#mobile-utility-not-logged-in a,
-#mobile-utility-logged-in a,
-#mobile-utility-logged-in button {
-  padding: var(--spacing-lg) 0;
-  font-size: var(--font-size-lg);
+#mobile-utility-not-logged-in a {
+  font-size: var(--font-size-md);
   font-weight: var(--font-semibold);
   text-align: center;
 }
 
 #mobile-main-navigation {
+  border-bottom: var(--border-width-sm) solid var(--tertiary-color);
+  
   ul {
-    li:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    li {
       padding-top: var(--spacing-lg);
+      padding-bottom: var(--spacing-lg);
     }
+  }
+}
+
+#mobile-utility-logged-in {
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: var(--spacing-lg);
+  }
+  
+  li {
+    text-align: center;
+  }
+  
+  button {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-semibold);
+    text-align: center;
   }
 }
 
@@ -207,4 +223,22 @@ body > header {
     display: flex;
     gap: var(--spacing-md);
   }
+}
+
+#mobile-cart-section {
+  border-bottom: var(--border-width-sm) solid var(--tertiary-color);
+  padding-bottom: var(--spacing-lg);
+}
+
+#mobile-cart-section ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+}
+
+#mobile-cart-section li {
+  text-align: center;
+  padding-top: var(--spacing-lg);
 }
