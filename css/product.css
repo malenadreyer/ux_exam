@@ -1,13 +1,13 @@
 @import "styles.css";
 
 :root {
-  --imgMaxWidth: 320px;
+  --imgMaxWidth: var(--width-md);
 }
 
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; 
+  min-height: var(--vw-100); 
   margin: 0;
 }
 

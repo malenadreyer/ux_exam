@@ -1,0 +1,57 @@
+@import "styles.css";
+
+:root {
+  --thumbnailDimension: var(--width-s);
+}
+
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--spacing-xxxl) var( --spacing-xl);
+}
+
+#product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--thumbnailDimension), 1fr));
+  grid-auto-rows: auto;
+  gap: var(--spacing-xxxl);
+
+  header {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+
+  article {
+    display: flex;
+    flex-flow: column nowrap;
+    padding: var(--spacing-md);
+    gap: var( --spacing-sm);
+    justify-self: center;
+    align-items: center;
+    max-width: var(--thumbnailDimension);
+    border-radius: var(--border-radius-md);
+
+    img {
+      width: var(--thumbnailDimension);
+      height: var(--thumbnailDimension);
+      padding: var(--spacing-lg);
+      object-fit: contain;
+    }
+    a {
+      text-decoration: none;
+    }
+    h2 {
+      font-size: var(--font-size-md);
+      height: var(--card-spacing);
+    }
+    p {
+      align-self: self-start;
+    }
+    .product-category {
+      font-size: var(--font-size-sm);
+    }
+  }
+  article:hover {
+    box-shadow: 0 var(--shadow-px-sm) var(--shadow-px-lg) rgba(0, 0, 0, var(--opacity-xs));
+  }
+}

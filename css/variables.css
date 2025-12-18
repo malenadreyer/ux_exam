@@ -92,6 +92,7 @@
   --height-lg: 25rem;
   --height-xl: 28.125rem;
   --vh-100: 100vh;
+  --vw-95: 95vw;
   --vw-100: 100vw;
   --vh-30: 35vh;
   --vh-50: 50vh;
@@ -139,11 +140,12 @@
   --ch-width-sm: 60ch;
   --ch-width-md: 80ch;
 
-  /* Shadow pixels? */
+  /* Shadow pixels */
   --shadow-px-sm: 2px;
   --shadow-px-md: 4px;
   --shadow-px-lg: 8px;
   --shadow-px-xxl: 25px;
+  --shadow-px-3xl: 30px;
 
   /* Hex colour def */
   --white-hex: 255;
