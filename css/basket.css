@@ -52,7 +52,6 @@
   gap: var(--spacing-md);
 
   h3 {
-    font-family: var(--header-font);
     font-size: var(--font-size-lg);
 
   }
