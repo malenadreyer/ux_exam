@@ -40,9 +40,10 @@ footer {
 #cta {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--spacing-md);
   background-color: var(--tertiary-color);
   border: none;
+  font-size: var( --font-size-md);
 }
 
 #cta:hover {
@@ -51,7 +52,7 @@ footer {
 
 #cta img {
   filter: brightness(0) invert(1); 
-  width: 2rem; 
+  width: var(--image-icon-base-width); 
   height: auto;
   margin: 0;
   border-radius: 0;

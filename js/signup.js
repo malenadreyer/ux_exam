@@ -1,7 +1,7 @@
 import { USERS_BASE_URL } from './info.js';
 import { showModal } from './modal.js';
 
-document.querySelector('#signup_form').addEventListener('submit', (e) => {
+document.querySelector('#signup-form').addEventListener('submit', (e) => {
     e.preventDefault();
 
     const email = e.target.email.value.trim();
@@ -48,12 +48,14 @@ document.querySelector('#signup_form').addEventListener('submit', (e) => {
         }
         return response.json();
     })
-    .then((data) => {
-        if (data) {
-            showModal('Signed up', 'The new user was created successfully.');
-            e.target.reset();
-        }
-    })
+.then((data) => {
+    if (data) {
+        showModal('Signed up', 'The new user was created successfully.');
+        setTimeout(() => {
+            location.href = 'login.html';
+        }, 1500);
+    }
+})
     .catch(error => {
         console.error('Error:', error);
         showModal('Error', 'Failed to create user. Please try again.');

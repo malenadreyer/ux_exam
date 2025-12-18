@@ -15,33 +15,34 @@
 </head>
 
 <body>
-   <header>
+  <header>
     <p id="user" class="hidden"></p>
-        <a href="index.html" title="Back to homepage">
-            <img src="assets/images/the-pawn-logo.webp" alt="The Pawn main Logo" class="logo" height="92" width="92">
-        </a>
-        <div id="desktop-menu">
-            <nav id="main-navigation">
-                <ul>
-                    <li><a href="index.html" title="Browse products" class="btn">Products</a></li>
-                </ul>
-            </nav>
-            <nav id="utility-not-logged-in" aria-hidden="true">
-                <ul>
-                    <li><a href="login.html" id="login" class="btn btn-outline" title="Log in">Log in</a></li>
-                    <li><a href="signup.html" id="signup" class="btn btn-outline" title="Sign up">Sign up</a></li>
-                    <li>
-                        <a href="basket.html" id="cart" class="hidden" title="View cart">
-                            <img src="assets/icons/cart.svg" alt="Shopping cart" height="24" width="24">
-                        </a></li>
-                    <li id="logout" class="hidden"><button id="btnLogout">Log out</button></li>
-                </ul>
-            </nav>
-        </div>
+    <a href="index.html" title="Back to homepage">
+      <img src="assets/images/the-pawn-logo.webp" alt="The Pawn main Logo" class="logo" height="92" width="92">
+    </a>
+    <div id="desktop-menu">
+      <nav id="main-navigation">
+        <ul>
+          <li><a href="index.html" title="Browse products" class="btn">Products</a></li>
+        </ul>
+      </nav>
+      <nav id="utility" aria-hidden="true">
+        <ul>
+          <li><a href="login.html" id="login" class="btn btn-outline" title="Log in">Log in</a></li>
+          <li><a href="signup.html" id="signup" class="btn btn-outline" title="Sign up">Sign up</a></li>
+          <li>
+            <a href="basket.html" id="cart" class="hidden" title="View cart">
+              <img src="assets/icons/cart.svg" alt="Shopping cart" height="24" width="24">
+            </a>
+          </li>
+          <li id="logout" class="hidden"><button class="btn" id="logout-btn">Log out</button></li>
+        </ul>
+      </nav>
+    </div>
 
-        <button id="burger-button" aria-label="Open menu">
-            <img src="assets/icons/Menu.svg" alt="Burger-menu icon" height="48" width="48">
-        </button>
+    <button id="burger-button" aria-label="Open menu">
+      <img src="assets/icons/Menu.svg" alt="Burger-menu icon" height="48" width="48">
+    </button>
 
         <div id="right-side-menu">
             <button id="close-button" aria-label="Close menu">

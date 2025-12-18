@@ -2,17 +2,15 @@ import { BASE_URL, SESSION_STORAGE_USER_EMAIL } from './info.js';
 import { showModal } from './modal.js';
 
 const getCart = () => {
-    const email = sessionStorage.getItem(SESSION_STORAGE_USER_EMAIL)
+    const email = sessionStorage.getItem(SESSION_STORAGE_USER_EMAIL);
     if (!email) return [];
-
-    const cart = localStorage.getItem(`cart_${email}`)
+    const cart = localStorage.getItem(`cart_${email}`);
     return cart ? JSON.parse(cart) : [];
 };
 
 const saveCart = (cart) => {
     const email = sessionStorage.getItem(SESSION_STORAGE_USER_EMAIL);
-    if(!email) return;
-
+    if (!email) return;
     localStorage.setItem(`cart_${email}`, JSON.stringify(cart));
 };
 
@@ -26,27 +24,20 @@ export const addToCart = (productInfo) => {
     const productId = Number(productInfo);
     const existingItem = cart.find(item => item.id === productId);
     
-    if (existingItem) {
-        existingItem.quantity += 1;
-    } else {
-        cart.push({ id: productId, quantity: 1 });
-    }
-    
+    existingItem ? existingItem.quantity += 1 : cart.push({ id: productId, quantity: 1 });
     saveCart(cart);
 };
 
 const removeFromCart = (productInfo) => {
     let cart = getCart();
-    const productId = Number(productInfo);
-    cart = cart.filter(item => item.id !== productId);
+    cart = cart.filter(item => item.id !== Number(productInfo));
     saveCart(cart);
     renderCart();
 };
 
 const updateQuantity = (productInfo, quantity) => {
     const cart = getCart();
-    const productId = Number(productInfo);
-    const item = cart.find(item => item.id === productId);
+    const item = cart.find(item => item.id === Number(productInfo));
     
     if (item) {
         item.quantity = quantity;
@@ -54,48 +45,21 @@ const updateQuantity = (productInfo, quantity) => {
             removeFromCart(productInfo);
             return;
         }
+        saveCart(cart);
+        renderCart();
     }
-    
-    saveCart(cart);
-    renderCart();
-};
-
-const handleSubmit = (e) => {
-    e.preventDefault();
-    
-    const billingName = document.querySelector('#billing-name').value;
-    const billingAddress = document.querySelector('#billing-address').value;
-    const billingCity = document.querySelector('#billing-city').value;
-    const billingZip = document.querySelector('#billing-zip').value;
-    const cardNumber = document.querySelector('#card-number').value;
-    const cardExpiry = document.querySelector('#card-expiry').value;
-    const cardCvv = document.querySelector('#card-cvv').value;
-    
-    const confirmMsg = document.querySelector('#confirm-message');
-    
-    if (!billingName || !billingAddress || !billingCity || !billingZip || !cardNumber || !cardExpiry || !cardCvv) {
-        confirmMsg.innerText = 'Please fill out the form';
-        confirmMsg.className = 'confirm-message error';
-        return;
-    }
-    
-    saveCart([]);
-    
-   showModal('Order confirmed', 'Thank you for your order!')
-    
-    renderCart();
 };
 
 const renderCart = async () => {
-    const email = sessionStorage.getItem(SESSION_STORAGE_USER_EMAIL)
+    const email = sessionStorage.getItem(SESSION_STORAGE_USER_EMAIL);
     if (!email) {
         location.href = 'login.html';
         return;
     }
+    
     const cart = getCart();
     const cartContainer = document.querySelector('#cart-items');
     const totalElement = document.querySelector('#cart-total');
-    
     
     if (!cartContainer) return;
     
@@ -107,22 +71,15 @@ const renderCart = async () => {
         return;
     }
     
-    const products = await fetch(`${BASE_URL}`)
-        .then(response => response.json())
-        .catch(error => {
-            console.error('Error fetching products:', error);
-            return [];
-        });
+    const products = await fetch(BASE_URL).then(r => r.json()).catch(() => []);
     
-    const fragment = document.createDocumentFragment();
     let total = 0;
     
     cart.forEach(cartItem => {
         const product = products.find(p => p.id == cartItem.id);
         if (!product) return;
         
-        const itemTotal = product.price * cartItem.quantity;
-        total += itemTotal;
+        total += product.price * cartItem.quantity;
         
         const cartItemElement = document.createElement('div');
         cartItemElement.className = 'cart-item';
@@ -148,7 +105,7 @@ const renderCart = async () => {
         minusBtn.innerText = '-';
         minusBtn.className = 'quantity-btn';
         minusBtn.type = 'button';
-        minusBtn.addEventListener('click', () => updateQuantity(product.id, cartItem.quantity - 1));
+        minusBtn.onclick = () => updateQuantity(product.id, cartItem.quantity - 1);
         
         const quantitySpan = document.createElement('span');
         quantitySpan.className = 'quantity-number';
@@ -158,34 +115,107 @@ const renderCart = async () => {
         plusBtn.innerText = '+';
         plusBtn.className = 'quantity-btn';
         plusBtn.type = 'button';
-        plusBtn.addEventListener('click', () => updateQuantity(product.id, cartItem.quantity + 1));
+        plusBtn.onclick = () => updateQuantity(product.id, cartItem.quantity + 1);
         
         const removeBtn = document.createElement('button');
         removeBtn.innerText = 'Remove';
         removeBtn.className = 'remove-btn';
         removeBtn.type = 'button';
-        removeBtn.addEventListener('click', () => removeFromCart(product.id));
+        removeBtn.onclick = () => removeFromCart(product.id);
         
         quantityWrapper.append(minusBtn, quantitySpan, plusBtn);
         info.append(title, price, quantityWrapper, removeBtn);
         cartItemElement.append(img, info);
-        fragment.append(cartItemElement);
+        cartContainer.append(cartItemElement);
     });
     
-    cartContainer.append(fragment);
-    
-    if (totalElement) {
-        totalElement.innerText = `${total.toFixed(2)} kr`;
-    }
+    if (totalElement) totalElement.innerText = `${total.toFixed(2)} kr`;
 };
+
+// Card number - kun tal, auto-formattering
+const cardNumberInput = document.querySelector('#card-number');
+if (cardNumberInput) {
+    cardNumberInput.addEventListener('input', (e) => {
+        let value = e.target.value.replace(/\D/g, '');
+        let formatted = value.match(/.{1,16}/g)?.join(' ') || value;
+        
+        value = value.substring(0, 16);
+        formatted = value.match(/.{1,16}/g)?.join(' ') || value;
+        e.target.value = formatted;
+        
+    });
+}
+
+// CVV - kun tal, max 4
+const cardCvvInput = document.querySelector('#card-cvv');
+if (cardCvvInput) {
+    cardCvvInput.addEventListener('input', (e) => {
+        let value = e.target.value.replace(/\D/g, '');
+        e.target.value = value.substring(0, 4);
+    });
+}
+const cardExpiryInput = document.querySelector('#card-expiry');
+if (cardExpiryInput) {
+    cardExpiryInput.addEventListener('input', (e) => {
+        let value = e.target.value.replace(/\D/g, '');
+        value = value.substring(0, 4);
+
+        e.target.value = value;
+    });
+}
 
 
 const form = document.querySelector('#checkout-form');
-const sameCheckbox = document.querySelector('#same-as-billing');
-
 if (form) {
-    form.addEventListener('submit', handleSubmit);
-    
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const billingName = e.target.elements['billing-name'].value.trim();
+        const billingAddress = e.target.elements['billing-address'].value.trim();
+        const billingCity = e.target.elements['billing-city'].value.trim();
+        const billingZip = e.target.elements['billing-zip'].value.trim();
+        const cardNumber = e.target.elements['card-number'].value.trim();
+        const cardExpiry = e.target.elements['card-expiry'].value.trim();
+        const cardCvv = e.target.elements['card-cvv'].value.trim();
+        
+        // Tjek alle felter udfyldt
+        if (!billingName || !billingAddress || !billingCity || !billingZip || !cardNumber || !cardExpiry || !cardCvv) {
+            showModal('Validation error', 'Please fill out all fields');
+            return;
+        }
+        
+        const cleanedCard = cardNumber.replace(/\s/g, '');
+        if (!/^\d{16}$/.test(cleanedCard)) {
+            showModal('Validation error', 'Card number must be 16 digits');
+            return;
+        }
+        
+        if (!/^\d{3,4}$/.test(cardCvv)) {
+            showModal('Validation error', 'CVV must be 3 or 4 digits');
+            return;
+        }
+        
+        if (!/^\d{4}$/.test(cardExpiry)) {
+            showModal('Validation error', 'Expiry date must be in MM/YY format (e.g. 12/25)');
+            return;
+        }
+        const cart = getCart();
+        if (!cart || cart.length === 0) {
+            showModal('Checkout error', 'Your cart is empty');
+            return;
+        }
+        
+        
+        saveCart([]);
+        showModal('Order confirmed', 'Thank you for your order!');
+        e.target.reset();
+        renderCart();
+    });
+}
+
+// Check as if the same as billing
+const sameCheckbox = document.querySelector('#same-as-billing');
+if (sameCheckbox) {
     sameCheckbox.addEventListener('change', () => {
         if (sameCheckbox.checked) {
             document.querySelector('#delivery-name').value = document.querySelector('#billing-name').value;
@@ -194,6 +224,6 @@ if (form) {
             document.querySelector('#delivery-zip').value = document.querySelector('#billing-zip').value;
         }
     });
-    
-    renderCart();
 }
+
+renderCart();
