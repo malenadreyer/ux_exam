@@ -242,3 +242,89 @@ body > header {
   text-align: center;
   padding-top: var(--spacing-lg);
 }
+
+/* Button styling */
+.btn {
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  
+  /* Typography */
+  font-family: var(--clickable-element-font);
+  font-weight: var(--font-semibold);
+  font-size: var(--font-size-xl);
+  
+  /* Sizing & Shape */
+  padding: var(--spacing-md) var(--spacing-xl);
+  border-radius: var(--border-radius-md);
+  
+  /* Colors */
+  background-color: var(--primary-color);
+  color: var(--light-background-color);
+  border: var(--border-width-md) solid var(--primary-color);
+  
+  /* Animation */
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.btn:hover {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  color: var(--light-background-color);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: var(--border-width-md) solid var(--primary-color);
+}
+
+.btn-outline:hover {
+  background-color: var(--hover-color);
+  border-color: var(--hover-color);
+  color: var(--light-text-color);
+}
+
+/* Burgermenu mobile btn styling */
+.mobile-btn {
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  
+  /* Typography */
+  font-family: var(--clickable-element-font);
+  font-weight: var(--font-semibold);
+  font-size: var(--font-size-md);
+  
+  /* Sizing & Shape */
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--border-radius-md);
+  
+  /* Colors */
+  color: var(--primary-color);
+  border: var(--border-width-md) solid var(--primary-color);
+}
+
+/* Burgermenu mobile CTA btn styling */
+.mobile-cta-btn {
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  width: fit-content;
+  
+  /* Typography */
+  font-family: var(--clickable-element-font);
+  font-weight: var(--font-semibold);
+  font-size: var(--font-size-md);
+  
+  /* Sizing & Shape */
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--border-radius-md);
+  
+  /* Colors */
+  background-color: var(--primary-color);
+  color: var(--light-background-color);
+  border: var(--border-width-md) solid var(--primary-color);
+}

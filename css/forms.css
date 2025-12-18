@@ -90,32 +90,6 @@ main {
   }
 }
 
-/* primary button */
-.primary-button {
-  width: auto;
-  min-width: var(--width-s);
-  max-width: var(--width-md);
-  margin: 0 auto var(--spacing-lg);
-  min-height: var(--touch-size);
-  padding: var(--spacing-xs) var(--spacing-xl);
-  border: var(--border-width-md) solid transparent;
-  border-radius: var(--border-radius-md);
-  background: var(--primary-color);
-  color: var(--light-text-color);
-  font-size: var(--font-size-md);
-  font-weight: var(--font-bold);
-  font-family: var(--clickable-element-font);
-  text-align: center;
-  cursor: pointer;
-  display: block;
-
-  &:hover {
-    border-color: var(--hover-color);
-    background-color: var(--hover-color);
-    color: var(--light-text-color);
-  }
-}
-
 /* input and button focus */
 input:focus,
 button:focus {

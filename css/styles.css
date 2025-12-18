@@ -22,88 +22,29 @@ p, span, a, li, div {
 .hidden {
   display: none;
 }
-/* Central Button Styling */
-.btn {
-  text-decoration: none;
-  cursor: pointer;
-  text-align: center;
-  
-  /* Typography */
-  font-family: var(--clickable-element-font);
-  font-weight: var(--font-semibold);
-  font-size: var(--font-size-xl);
-  
-  /* Sizing & Shape */
-  padding: var(--spacing-md) var(--spacing-xl);
+
+/* primary button */
+.primary-button {
+  width: auto;
+  min-width: var(--width-s);
+  max-width: var(--width-md);
+  margin: 0 auto var(--spacing-lg);
+  min-height: var(--touch-size);
+  padding: var(--spacing-xs) var(--spacing-xl);
+  border: var(--border-width-md) solid transparent;
   border-radius: var(--border-radius-md);
-  
-  /* Colors */
-  background-color: var(--primary-color);
-  color: var(--light-background-color);
-  border: var(--border-width-md) solid var(--primary-color);
-  
-  /* Animation */
-  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
-}
-
-.btn:hover {
-  background-color: var(--secondary-color);
-  border-color: var(--secondary-color);
-  color: var(--light-background-color);
-}
-
-.btn-outline {
-  background-color: transparent;
-  color: var(--primary-color);
-  border: var(--border-width-md) solid var(--primary-color);
-}
-
-.btn-outline:hover {
-  background-color: var(--hover-color);
-  border-color: var(--hover-color);
+  background: var(--primary-color);
   color: var(--light-text-color);
-}
-
-/* Burgermenu mobile btn styling */
-.mobile-btn {
-  text-decoration: none;
-  cursor: pointer;
-  text-align: center;
-  
-  /* Typography */
-  font-family: var(--clickable-element-font);
-  font-weight: var(--font-semibold);
   font-size: var(--font-size-md);
-  
-  /* Sizing & Shape */
-  padding: var(--spacing-md) var(--spacing-lg);
-  border-radius: var(--border-radius-md);
-  
-  /* Colors */
-  color: var(--primary-color);
-  border: var(--border-width-md) solid var(--primary-color);
-}
-
-/* Burgermenu mobile CTA btn styling */
-.mobile-cta-btn {
-  text-decoration: none;
-  cursor: pointer;
+  font-weight: var(--font-bold);
+  font-family: var(--clickable-element-font);
   text-align: center;
+  cursor: pointer;
   display: block;
-  margin: 0 auto;
-  width: fit-content;
-  
-  /* Typography */
-  font-family: var(--clickable-element-font);
-  font-weight: var(--font-semibold);
-  font-size: var(--font-size-md);
-  
-  /* Sizing & Shape */
-  padding: var(--spacing-md) var(--spacing-lg);
-  border-radius: var(--border-radius-md);
-  
-  /* Colors */
-  background-color: var(--primary-color);
-  color: var(--light-background-color);
-  border: var(--border-width-md) solid var(--primary-color);
+
+  &:hover {
+    border-color: var(--hover-color);
+    background-color: var(--hover-color);
+    color: var(--light-text-color);
+  }
 }
