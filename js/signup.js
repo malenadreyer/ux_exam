@@ -53,7 +53,7 @@ document.querySelector('#signup-form').addEventListener('submit', (e) => {
         showModal('Signed up', 'The new user was created successfully.');
         setTimeout(() => {
             location.href = 'login.html';
-        }, 1500);
+        }, 1000);
     }
 })
     .catch(error => {
