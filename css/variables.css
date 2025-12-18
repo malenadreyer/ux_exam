@@ -72,18 +72,18 @@
   --border-width-lg: 3px;
   --border-width-xl: 4px;
 
-  /* Image sizes */
+  /* images sizes */
   --image-size-sm: 150px;
   --image-icon-base-width: 32px;
   --logo-size: 92px;
-  --social-icon-size: 30px;
 
   /* Scales (for helping with responsiveness :)) */
+  --social-icon-size: 30px;
   --scale-minus-mini: -0.0625rem;
   --scale-mini: 0.0625rem;
   --scale-sm: 1.02;
   --full-scale: 100%;
-  --width-xs: 150px;
+  --width-xs: 9.375;
   --width-s: 12.5rem;
   --width-sm: 15.625rem;
   --width-md: 18.75rem;
