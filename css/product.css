@@ -1,4 +1,5 @@
 @import "styles.css";
+@import "modal.css";
 
 :root {
   --imgMaxWidth: var(--width-md);
@@ -7,18 +8,14 @@
 body {
   display: flex;
   flex-direction: column;
-  min-height: var(--vw-100); 
+  min-height: var(--vh-100); 
   margin: 0;
 }
 
 main {
   margin: var(--spacing-xl) var(--spacing-xl) 0; 
-  height: 100%; 
+  height: var(--full-scale);
   flex-grow: 1;
-}
-
-footer {
-  width: 100%;
 }
 
 #product-info {
@@ -32,7 +29,7 @@ footer {
   }
 
   img {
-    width: 100%;
+    width: var(--full-scale);
     border-radius: var(--border-radius-lg);
   }
 }

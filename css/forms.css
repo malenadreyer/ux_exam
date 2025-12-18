@@ -133,6 +133,7 @@ form {
 
 #login-form,
 #signup-form {
+  padding: var(--spacing-4xl);
   h1 {
     margin-bottom: var(--spacing-xxxl);
   }
