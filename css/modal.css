@@ -3,8 +3,8 @@ dialog {
     border: var(--border-radius-xl) solid var(--primary-color);
     border-radius: var(--spacing-lg);
     padding: 0;
-    max-width: min(90vw, 320px);
-    width: 100%;
+    max-width: min(var(--vw-90), var(--width-mdd));
+    width: var(--full-scale);
     
     .modal-content {
         display: flex;

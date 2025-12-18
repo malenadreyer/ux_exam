@@ -1,12 +1,13 @@
 footer {
-  margin: 0 auto;
+  margin: 0;
   padding: var(--spacing-xl) var(--spacing-xl);
   color: var(--light-text-color);
   background-color: var(--secondary-color);
   text-align: center;
   font-size: var(--font-size-md);
-  margin-top: var(--spacing-xxl);
+  margin-top: auto; /* Changed from var(--spacing-xxl) */
   font-family: var(--main-font);
+  min-width: var(--full-scale);
 
   #media-icons {
     display: flex;
