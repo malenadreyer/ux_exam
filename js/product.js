@@ -1,6 +1,7 @@
 import { BASE_URL } from "./info.js";
 import { capitalizeFirstLetter } from "./functions.js";
 import { addToCart } from "./basket.js";
+import { showModal } from './modal.js';
 
 const productInfo = document.querySelector("#product-info");
 productInfo.querySelector("h1").innerText = "Loading product...";
@@ -27,14 +28,15 @@ const showProduct = (info) => {
   const category = capitalizeFirstLetter(info.category);
   productInfo.querySelector(".product-category").innerText = category;
 
+  const rating = `${info.rating.rate}/5 (${info.rating.count} reviews)`
+  productInfo.querySelector(".product-rating").innerText = rating ;
+
   const description = info.description;
   const regex = / \/ |,\s*(?=[A-Z]|\d)/g;
   productInfo.querySelector("#product-description").innerText = description.replace(regex, "\n\n");
-
-
-
 };
 const addToCartBtn = document.querySelector('#cta');
 addToCartBtn.addEventListener('click', () => {
   addToCart(productID);
+  showModal('Success', 'Product added to cart!');
 });
