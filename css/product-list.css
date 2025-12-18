@@ -29,7 +29,6 @@ main {
     justify-self: center;
     align-items: center;
     max-width: var(--thumbnailDimension);
-    box-shadow: 0 var(--shadow-px-sm) var(--shadow-px-md) rgba(0, 0, 0, var(--opacity-xs));
     border-radius: var(--border-radius-md);
 
     img {

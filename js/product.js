@@ -32,9 +32,20 @@ const showProduct = (info) => {
   productInfo.querySelector(".product-rating").innerText = rating ;
 
   const description = info.description;
+
+  // Regular expression to identify where the description should break into new lines
+  // 1. " \/ " : Matches a forward slash with spaces on both sides
+  // 2. |      : OR
+  // 3. ",\s*(?=[A-Z]|\d)" : Matches a comma followed by optional spaces, 
+  //    but ONLY if followed by an Uppercase letter or a Digit.
+  //    The (?=...) is a "lookahead" and it checks the next character without deleting it.
   const regex = / \/ |,\s*(?=[A-Z]|\d)/g;
+
+  // Replace all matches found by the regex with two new lines (\n\n) to create 
+  // clear visual spacing between points in the product description.
   productInfo.querySelector("#product-description").innerText = description.replace(regex, "\n\n");
 };
+
 const addToCartBtn = document.querySelector('#cta');
 addToCartBtn.addEventListener('click', () => {
   addToCart(productID);
