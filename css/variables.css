@@ -17,6 +17,9 @@
 
   --light-background-color: #f2f0eb;
   --dark-background-color: #2b2b2b;
+  
+  --overlay-bg: rgba(0, 0, 0, 0.5);
+
 
   --dark-text-color: #2b2b2b;
   --light-text-color: #f2f0eb;
@@ -103,6 +106,7 @@
   --max-main-width: 68.75rem;
   --card-width: 15.625rem;
   --book-detail-width: 50rem;
+  
 
   /* Opacity, if needed? */
   --opacity-xs: 0.1;

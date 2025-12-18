@@ -7,7 +7,6 @@ main {
     font-size: var(--font-size-header);
     margin: var(--spacing-xxxl) 0 var(--spacing-xxl);
     text-align: center;
-    font-family: var(--header-font);
   }
 
   @media (min-width: 768px) {
