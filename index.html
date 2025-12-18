@@ -46,15 +46,19 @@
             <button id="close-button" aria-label="Close menu">
                 <img src="assets/icons/X.svg" alt="Close menu icon" height="48" width="48">
             </button>
-            <nav id="mobile-utility-not-logged-in" aria-hidden="true">
+            <nav id="mobile-cart-section">
                 <ul>
                     <li>
-                        <a href="basket.html" id="cart" class="hidden" title="View cart">
+                        <a href="basket.html" id="mobile-cart" class="hidden" title="View cart">
                             <img src="assets/icons/cart.svg" alt="Shopping cart" height="24" width="24">
                         </a>
                     </li>
-                    <li><a class="mobile-btn" id="login" href="login.html">Log in</a></li>
-                    <li><a class="mobile-btn" id="signup" href="signup.html">Sign up</a></li>
+                </ul>
+            </nav>
+            <nav id="mobile-utility-not-logged-in" aria-hidden="true">
+                <ul>
+                    <li><a class="mobile-btn" id="mobile-login" href="login.html">Log in</a></li>
+                    <li><a class="mobile-btn" id="mobile-signup" href="signup.html">Sign up</a></li>
                 </ul>
             </nav>
             <nav id="mobile-main-navigation">
@@ -64,7 +68,7 @@
             </nav>
             <nav id="mobile-utility-logged-in" aria-hidden="true">
                 <ul>
-                    <li id="logout"><button class="logout-button hidden">Logout</button></li>
+                    <li id="mobile-logout"><button class="logout-button hidden">Logout</button></li>
                 </ul>
             </nav>
         </div>
