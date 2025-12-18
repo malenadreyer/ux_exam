@@ -59,7 +59,7 @@ dialog::backdrop {
 /* Responsive adjustments */
 @media (max-width: 768px) {
     dialog {
-        max-width: 95vw;
+        max-width: var(--vw-95);
         
         .modal-content {
             padding: var(--spacing-lg);

@@ -1,7 +1,7 @@
 @import "styles.css";
 
 :root {
-  --thumbnailDimension: 200px;
+  --thumbnailDimension: var(--width-s);
 }
 
 main {
